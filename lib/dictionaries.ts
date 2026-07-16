@@ -1,8 +1,8 @@
 import type { Locale } from "./locales";
-import trDictionary from "./dictionaries/tr.json";
-import enDictionary from "./dictionaries/en.json";
+import trDictionary from "./messages/tr.json";
+import enDictionary from "./messages/en.json";
 
-const dictionaries = {
+const messages = {
   tr: trDictionary,
   en: enDictionary,
 } satisfies Record<Locale, typeof trDictionary>;
@@ -10,7 +10,7 @@ const dictionaries = {
 export type Dictionary = typeof trDictionary;
 
 export function getDictionary(locale: Locale): Dictionary {
-  return dictionaries[locale];
+  return messages[locale];
 }
 
 export { locales, defaultLocale, hasLocale, type Locale } from "./locales";
