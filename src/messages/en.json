@@ -1,0 +1,353 @@
+{
+  "meta": {
+    "title": "OtelKirala - The Best Hotels for Your Vacation",
+    "description": "Compare hotels at the best prices across Turkey and book your vacation instantly."
+  },
+  "header": {
+    "brand": "OtelKirala",
+    "nav": {
+      "hotels": "Hotels",
+      "destinations": "Destinations",
+      "reviews": "Reviews",
+      "contact": "Contact"
+    },
+    "login": "Log In",
+    "greeting": "Hello",
+    "logout": "Log Out",
+    "cta": "Find a Hotel",
+    "menuToggle": "Toggle menu"
+  },
+  "hero": {
+    "badge": "10,000+ hotels across Turkey",
+    "imageAlt": "Beachfront hotel",
+    "titleBefore": "The vacation of your dreams is",
+    "titleHighlight": "one click",
+    "titleAfter": "away",
+    "subtitle": "Compare hotels at the best prices, complete your booking instantly, and enjoy your vacation.",
+    "form": {
+      "destinationLabel": "Where are you going?",
+      "destinationPlaceholder": "Antalya, Bodrum, Cappadocia...",
+      "checkinLabel": "Check-in",
+      "checkoutLabel": "Check-out",
+      "guestsLabel": "Guests",
+      "guestsOptions": [
+        "2 Adults",
+        "1 Adult",
+        "2 Adults, 1 Child",
+        "2 Adults, 2 Children",
+        "4 Adults"
+      ],
+      "submit": "Search Hotels"
+    },
+    "stats": {
+      "hotels": "Hotel Options",
+      "guests": "Happy Guests",
+      "rating": "Average Rating"
+    }
+  },
+  "popularHotels": {
+    "title": "All Our Hotels",
+    "subtitle": "Explore our full range of hotels across Turkey."
+  },
+  "hotelCard": {
+    "reviews": "reviews",
+    "startingFrom": "Starting from / night",
+    "viewDetails": "View"
+  },
+  "hotelDetail": {
+    "backToList": "Back to Hotels",
+    "aboutTitle": "About This Hotel",
+    "halalFeaturesTitle": "Halal-Friendly Features",
+    "halalFeatures": {
+      "separatePool": "Separate Men's/Women's Pool",
+      "separateBeach": "Separate Men's/Women's Beach",
+      "halalFood": "Halal Kitchen",
+      "noAlcohol": "Alcohol-Free Property",
+      "prayerRoom": "Prayer Room",
+      "separateSpa": "Separate Men's/Women's Spa"
+    },
+    "roomsTitle": "Room Options",
+    "roomCapacity": "guests",
+    "roomPerNight": "/ night",
+    "selectRoom": "Select This Room",
+    "reviewsTitle": "Guest Reviews",
+    "noReviews": "No reviews yet for this hotel.",
+    "startingFrom": "Starting from / night",
+    "bookNow": "Book Now"
+  },
+  "destinations": {
+    "title": "Popular Destinations",
+    "subtitle": "Discover Turkey's most popular vacation destinations.",
+    "hotelsSuffix": "hotels"
+  },
+  "whyUs": {
+    "title": "Why OtelKirala?",
+    "subtitle": "Advantages that make planning your vacation easier.",
+    "features": [
+      {
+        "icon": "💸",
+        "title": "Best Price Guarantee",
+        "description": "Find the same hotel cheaper elsewhere and we'll refund the difference."
+      },
+      {
+        "icon": "🔒",
+        "title": "Secure Booking",
+        "description": "Your payment details are protected with 256-bit encryption."
+      },
+      {
+        "icon": "📞",
+        "title": "24/7 Support",
+        "description": "Our support team is with you throughout your vacation."
+      },
+      {
+        "icon": "↩️",
+        "title": "Free Cancellation",
+        "description": "Free cancellation up to 24 hours before check-in at most hotels."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Guests Say",
+    "subtitle": "A few of our thousands of happy guests."
+  },
+  "auth": {
+    "login": {
+      "title": "Log In",
+      "subtitle": "Sign in to your account to manage your reservations.",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Log In",
+      "submitPending": "Logging in...",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Sign Up"
+    },
+    "register": {
+      "title": "Create Account",
+      "subtitle": "Create a free account to manage your reservations in one place.",
+      "nameLabel": "Full Name",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "confirmPasswordLabel": "Confirm Password",
+      "submit": "Sign Up",
+      "submitPending": "Creating account...",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Log In"
+    },
+    "errors": {
+      "requiredFields": "Please fill in all fields.",
+      "invalidEmail": "Enter a valid email address.",
+      "passwordTooShort": "Password must be at least 6 characters.",
+      "passwordMismatch": "Passwords do not match.",
+      "emailTaken": "An account with this email already exists.",
+      "invalidCredentials": "Incorrect email or password.",
+      "dbError": "Could not connect to the database. Please try again later."
+    }
+  },
+  "contactPage": {
+    "title": "Get in Touch",
+    "subtitle": "Have a question? Our team is happy to help.",
+    "infoTitle": "Contact Information",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "address": "Barbaros District, Hotel Ave. No:1, Istanbul",
+    "email": "destek@otelkirala.com",
+    "phone": "0850 000 00 00",
+    "form": {
+      "nameLabel": "Your Name",
+      "namePlaceholder": "Full Name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "messageLabel": "Your Message",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send"
+    }
+  },
+  "newsletter": {
+    "title": "Be the first to hear about our deals",
+    "subtitle": "Sign up for our newsletter and never miss exclusive discounts and last-minute deals.",
+    "placeholder": "Your email address",
+    "submit": "Subscribe"
+  },
+  "footer": {
+    "tagline": "Plan the vacation of your dreams with Turkey's widest hotel network.",
+    "exploreTitle": "Explore",
+    "exploreLinks": {
+      "hotels": "Hotels",
+      "destinations": "Destinations",
+      "reviews": "Reviews"
+    },
+    "companyTitle": "Company",
+    "companyLinks": {
+      "about": "About Us",
+      "careers": "Careers",
+      "privacy": "Privacy Policy"
+    },
+    "contactTitle": "Contact",
+    "rightsReserved": "All rights reserved.",
+    "email": "destek@otelkirala.com",
+    "phone": "0850 000 00 00"
+  },
+  "admin": {
+    "brand": "OtelKirala",
+    "panelSubtitle": "Admin Panel",
+    "mobileTitle": "OtelKirala Admin",
+    "logout": "Log Out",
+    "logoutShort": "Log Out",
+    "edit": "Edit",
+    "delete": "Delete",
+    "nav": {
+      "dashboard": "Dashboard",
+      "hotels": "Hotels",
+      "destinations": "Destinations",
+      "testimonials": "Reviews"
+    },
+    "login": {
+      "metaTitle": "Admin Login | OtelKirala",
+      "title": "Admin Panel",
+      "subtitle": "Sign in to continue.",
+      "username": "Username",
+      "password": "Password",
+      "submit": "Log In",
+      "submitPending": "Logging in...",
+      "error": "Incorrect username or password."
+    },
+    "dbError": {
+      "title": "Could not connect to MongoDB",
+      "body": "Make sure MONGODB_URI is set correctly in your .env.local file, then restart the server. See .env.example and the README for setup steps.",
+      "short": "Could not connect to MongoDB. Check your MONGODB_URI setting."
+    },
+    "saveError": "Could not connect to the database. Check your MONGODB_URI setting and try again.",
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Manage your OtelKirala content here.",
+      "seeded": "Sample data loaded successfully.",
+      "cards": {
+        "hotels": "Hotels",
+        "destinations": "Destinations",
+        "testimonials": "Reviews"
+      },
+      "empty": {
+        "title": "Database is empty",
+        "body": "Use the button below to fill the site with sample hotels, destinations and reviews.",
+        "seedButton": "Load Sample Data"
+      }
+    },
+    "hotels": {
+      "list": {
+        "title": "Hotels",
+        "subtitle": "Manage the hotels listed on the site.",
+        "add": "+ Add Hotel",
+        "colHotel": "Hotel",
+        "colLocation": "Location",
+        "colPrice": "Price",
+        "colRating": "Rating",
+        "empty": "No hotels yet. Start from the panel or with \"Load Sample Data\".",
+        "deleteConfirm": "Delete \"{name}\"?"
+      },
+      "new": {
+        "title": "New Hotel",
+        "subtitle": "Add a new hotel and publish it on the site."
+      },
+      "edit": {
+        "title": "Edit Hotel"
+      },
+      "form": {
+        "name": "Hotel Name",
+        "location": "Location",
+        "locationPlaceholder": "Bodrum, Muğla",
+        "price": "Price per Night (₺)",
+        "rating": "Rating (0-5)",
+        "reviewCount": "Review Count",
+        "image": "Image URL",
+        "imagePlaceholder": "https://images.unsplash.com/...",
+        "tags": "Tags (comma-separated)",
+        "tagsPlaceholder": "All Inclusive, Private Beach",
+        "description": "Description",
+        "descriptionPlaceholder": "Description text shown on the hotel detail page",
+        "images": "Gallery Images (comma-separated)",
+        "imagesPlaceholder": "https://images.unsplash.com/..., https://images.unsplash.com/...",
+        "halalTitle": "Halal-Friendly Features",
+        "save": "Save Changes",
+        "create": "Add Hotel"
+      },
+      "rooms": {
+        "title": "Room Types",
+        "namePlaceholder": "Room name",
+        "pricePlaceholder": "Price",
+        "capacityPlaceholder": "Capacity",
+        "imagePlaceholder": "Image URL",
+        "remove": "Remove",
+        "add": "+ Add Room"
+      },
+      "validation": {
+        "required": "Hotel name, location and image URL are required.",
+        "price": "Enter a valid price per night.",
+        "rating": "Rating must be between 0 and 5.",
+        "reviewCount": "Enter a valid review count."
+      }
+    },
+    "destinations": {
+      "list": {
+        "title": "Destinations",
+        "subtitle": "Manage the popular destinations shown on the home page.",
+        "add": "+ Add Destination",
+        "empty": "No destinations yet.",
+        "hotelsSuffix": "hotels",
+        "deleteConfirm": "Delete \"{name}\"?"
+      },
+      "new": {
+        "title": "New Destination",
+        "subtitle": "Add a new destination shown on the home page."
+      },
+      "edit": {
+        "title": "Edit Destination"
+      },
+      "form": {
+        "name": "Destination Name",
+        "namePlaceholder": "Antalya",
+        "hotelCount": "Hotel Count",
+        "image": "Image URL",
+        "imagePlaceholder": "https://images.unsplash.com/...",
+        "save": "Save Changes",
+        "create": "Add Destination"
+      },
+      "validation": {
+        "required": "Destination name and image URL are required.",
+        "hotelCount": "Enter a valid hotel count."
+      }
+    },
+    "testimonials": {
+      "list": {
+        "title": "Reviews",
+        "subtitle": "Manage the guest reviews shown on the home page.",
+        "add": "+ Add Review",
+        "empty": "No reviews yet.",
+        "deleteConfirm": "Delete the review by \"{name}\"?"
+      },
+      "new": {
+        "title": "New Review",
+        "subtitle": "Add a new guest review shown on the home page."
+      },
+      "edit": {
+        "title": "Edit Review"
+      },
+      "form": {
+        "hotel": "Hotel (optional)",
+        "hotelNone": "General (not hotel-specific)",
+        "name": "Full Name",
+        "location": "City",
+        "avatar": "Avatar URL",
+        "avatarPlaceholder": "https://i.pravatar.cc/150?img=1",
+        "quote": "Review Text",
+        "rating": "Rating (1-5)",
+        "save": "Save Changes",
+        "create": "Add Review"
+      },
+      "validation": {
+        "required": "Name, city, avatar URL and review text are required.",
+        "rating": "Rating must be between 1 and 5."
+      }
+    }
+  }
+}

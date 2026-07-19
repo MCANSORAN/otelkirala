@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Kurumsal marka paleti: bordo/şarap (brand) + antik altın (gold) + krem (cream).
+   Butik-lüks bir kimlik için; tüm site bu üç tokenı kullanır, renk değişimi
+   yalnızca buradan yapılır. */
+@theme {
+  --color-brand-50: #fbf3f6;
+  --color-brand-100: #f6e5ea;
+  --color-brand-200: #ebc4d0;
+  --color-brand-300: #dc97a8;
+  --color-brand-400: #c9667e;
+  --color-brand-500: #b23d59;
+  --color-brand-600: #952c44;
+  --color-brand-700: #782234;
+  --color-brand-800: #5e1a29;
+  --color-brand-900: #4a1420;
+  --color-brand-950: #2b0b13;
+
+  --color-gold-50: #fbf7ea;
+  --color-gold-100: #f5ecc8;
+  --color-gold-200: #ecda99;
+  --color-gold-300: #e2c86a;
+  --color-gold-400: #d6b444;
+  --color-gold-500: #c9a227;
+  --color-gold-600: #ac8820;
+  --color-gold-700: #87691d;
+  --color-gold-800: #6e561d;
+  --color-gold-900: #5c481d;
+  --color-gold-950: #342810;
+
+  --color-cream: #f7f1ec;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}

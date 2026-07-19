@@ -1,0 +1,353 @@
+{
+  "meta": {
+    "title": "OtelKirala - Tatil için En İyi Oteller",
+    "description": "Türkiye'nin dört bir yanında en uygun fiyatlarla otel karşılaştır ve tatilini hemen ayırt."
+  },
+  "header": {
+    "brand": "OtelKirala",
+    "nav": {
+      "hotels": "Oteller",
+      "destinations": "Bölgeler",
+      "reviews": "Yorumlar",
+      "contact": "İletişim"
+    },
+    "login": "Giriş Yap",
+    "greeting": "Merhaba",
+    "logout": "Çıkış Yap",
+    "cta": "Otel Bul",
+    "menuToggle": "Menüyü aç/kapat"
+  },
+  "hero": {
+    "badge": "Türkiye'nin dört bir yanında 10.000+ otel",
+    "imageAlt": "Plaj kenarında otel",
+    "titleBefore": "Hayalindeki tatile",
+    "titleHighlight": "bir tık",
+    "titleAfter": "uzağında",
+    "subtitle": "En uygun fiyatlarla otel karşılaştır, an rezervasyonunu tamamla, tatilin keyfine bak.",
+    "form": {
+      "destinationLabel": "Nereye gidiyorsun?",
+      "destinationPlaceholder": "Antalya, Bodrum, Kapadokya...",
+      "checkinLabel": "Giriş",
+      "checkoutLabel": "Çıkış",
+      "guestsLabel": "Misafir",
+      "guestsOptions": [
+        "2 Yetişkin",
+        "1 Yetişkin",
+        "2 Yetişkin, 1 Çocuk",
+        "2 Yetişkin, 2 Çocuk",
+        "4 Yetişkin"
+      ],
+      "submit": "Otel Ara"
+    },
+    "stats": {
+      "hotels": "Otel Seçeneği",
+      "guests": "Mutlu Misafir",
+      "rating": "Ortalama Puan"
+    }
+  },
+  "popularHotels": {
+    "title": "Tüm Otellerimiz",
+    "subtitle": "Türkiye'nin dört bir yanındaki otel seçeneklerimizin tamamını keşfedin."
+  },
+  "hotelCard": {
+    "reviews": "değerlendirme",
+    "startingFrom": "Gecelik başlangıç",
+    "viewDetails": "İncele"
+  },
+  "hotelDetail": {
+    "backToList": "Otellere Dön",
+    "aboutTitle": "Otel Hakkında",
+    "halalFeaturesTitle": "Helal Konsept Özellikleri",
+    "halalFeatures": {
+      "separatePool": "Ayrı Kadın/Erkek Havuzu",
+      "separateBeach": "Ayrı Kadın/Erkek Plajı",
+      "halalFood": "Helal Mutfak",
+      "noAlcohol": "Alkolsüz Tesis",
+      "prayerRoom": "Mescit / Namaz Alanı",
+      "separateSpa": "Ayrı Kadın/Erkek Spa"
+    },
+    "roomsTitle": "Oda Seçenekleri",
+    "roomCapacity": "kişi",
+    "roomPerNight": "gecelik",
+    "selectRoom": "Bu Odayı Seç",
+    "reviewsTitle": "Misafir Yorumları",
+    "noReviews": "Bu otel için henüz yorum eklenmedi.",
+    "startingFrom": "Gecelik başlangıç",
+    "bookNow": "Hemen Rezervasyon Yap"
+  },
+  "destinations": {
+    "title": "Popüler Bölgeler",
+    "subtitle": "Türkiye'nin en çok tercih edilen tatil bölgelerini keşfet.",
+    "hotelsSuffix": "otel"
+  },
+  "whyUs": {
+    "title": "Neden OtelKirala?",
+    "subtitle": "Tatil planlarken işini kolaylaştıracak avantajlar.",
+    "features": [
+      {
+        "icon": "💸",
+        "title": "En Uygun Fiyat Garantisi",
+        "description": "Aynı oteli daha ucuza bulursan farkı iade ediyoruz."
+      },
+      {
+        "icon": "🔒",
+        "title": "Güvenli Rezervasyon",
+        "description": "Ödeme bilgilerin 256-bit şifreleme ile korunur."
+      },
+      {
+        "icon": "📞",
+        "title": "7/24 Destek",
+        "description": "Tatilin boyunca Türkçe destek ekibimiz yanında."
+      },
+      {
+        "icon": "↩️",
+        "title": "Ücretsiz İptal",
+        "description": "Birçok otelde girişten 24 saat öncesine kadar ücretsiz iptal."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Misafirlerimiz Ne Diyor?",
+    "subtitle": "Binlerce mutlu misafirden birkaçı."
+  },
+  "auth": {
+    "login": {
+      "title": "Giriş Yap",
+      "subtitle": "Hesabına giriş yaparak rezervasyonlarını yönet.",
+      "emailLabel": "E-posta",
+      "passwordLabel": "Şifre",
+      "submit": "Giriş Yap",
+      "submitPending": "Giriş yapılıyor...",
+      "noAccount": "Hesabın yok mu?",
+      "registerLink": "Kayıt Ol"
+    },
+    "register": {
+      "title": "Hesap Oluştur",
+      "subtitle": "Ücretsiz hesap oluştur, rezervasyonlarını tek yerden yönet.",
+      "nameLabel": "Ad Soyad",
+      "emailLabel": "E-posta",
+      "passwordLabel": "Şifre",
+      "confirmPasswordLabel": "Şifre (Tekrar)",
+      "submit": "Kayıt Ol",
+      "submitPending": "Kayıt oluşturuluyor...",
+      "hasAccount": "Zaten hesabın var mı?",
+      "loginLink": "Giriş Yap"
+    },
+    "errors": {
+      "requiredFields": "Tüm alanları doldurun.",
+      "invalidEmail": "Geçerli bir e-posta adresi girin.",
+      "passwordTooShort": "Şifre en az 6 karakter olmalıdır.",
+      "passwordMismatch": "Şifreler eşleşmiyor.",
+      "emailTaken": "Bu e-posta ile zaten bir hesap var.",
+      "invalidCredentials": "E-posta veya şifre hatalı.",
+      "dbError": "Veritabanına bağlanılamadı. Lütfen daha sonra tekrar deneyin."
+    }
+  },
+  "contactPage": {
+    "title": "Bize Ulaşın",
+    "subtitle": "Sorularınız mı var? Ekibimiz size yardımcı olmaktan mutluluk duyar.",
+    "infoTitle": "İletişim Bilgileri",
+    "emailLabel": "E-posta",
+    "phoneLabel": "Telefon",
+    "addressLabel": "Adres",
+    "address": "Barbaros Mah. Otel Cad. No:1, İstanbul",
+    "email": "destek@otelkirala.com",
+    "phone": "0850 000 00 00",
+    "form": {
+      "nameLabel": "Adınız",
+      "namePlaceholder": "Ad Soyad",
+      "emailLabel": "E-posta",
+      "emailPlaceholder": "ornek@eposta.com",
+      "messageLabel": "Mesajınız",
+      "messagePlaceholder": "Size nasıl yardımcı olabiliriz?",
+      "submit": "Gönder"
+    }
+  },
+  "newsletter": {
+    "title": "Kampanyalardan ilk sen haberdar ol",
+    "subtitle": "E-bültenimize kayıt ol, özel indirimleri ve son dakika fırsatlarını kaçırma.",
+    "placeholder": "E-posta adresin",
+    "submit": "Abone Ol"
+  },
+  "footer": {
+    "tagline": "Türkiye'nin en geniş otel ağıyla, hayalindeki tatili planla.",
+    "exploreTitle": "Keşfet",
+    "exploreLinks": {
+      "hotels": "Oteller",
+      "destinations": "Bölgeler",
+      "reviews": "Yorumlar"
+    },
+    "companyTitle": "Şirket",
+    "companyLinks": {
+      "about": "Hakkımızda",
+      "careers": "Kariyer",
+      "privacy": "Gizlilik Politikası"
+    },
+    "contactTitle": "İletişim",
+    "rightsReserved": "Tüm hakları saklıdır.",
+    "email": "destek@otelkirala.com",
+    "phone": "0850 000 00 00"
+  },
+  "admin": {
+    "brand": "OtelKirala",
+    "panelSubtitle": "Yönetici Paneli",
+    "mobileTitle": "OtelKirala Admin",
+    "logout": "Çıkış Yap",
+    "logoutShort": "Çıkış",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "nav": {
+      "dashboard": "Panel",
+      "hotels": "Oteller",
+      "destinations": "Bölgeler",
+      "testimonials": "Yorumlar"
+    },
+    "login": {
+      "metaTitle": "Yönetici Girişi | OtelKirala",
+      "title": "Yönetici Paneli",
+      "subtitle": "Devam etmek için giriş yapın.",
+      "username": "Kullanıcı Adı",
+      "password": "Şifre",
+      "submit": "Giriş Yap",
+      "submitPending": "Giriş yapılıyor...",
+      "error": "Kullanıcı adı veya şifre hatalı."
+    },
+    "dbError": {
+      "title": "MongoDB'ye bağlanılamadı",
+      "body": "MONGODB_URI ayarınızın .env.local dosyasında tanımlı ve doğru olduğundan emin olun, ardından sunucuyu yeniden başlatın. Kurulum adımları için .env.example ve README dosyasına bakabilirsiniz.",
+      "short": "MongoDB'ye bağlanılamadı. MONGODB_URI ayarınızı kontrol edin."
+    },
+    "saveError": "Veritabanına bağlanılamadı. MONGODB_URI ayarınızı kontrol edip tekrar deneyin.",
+    "dashboard": {
+      "title": "Panel",
+      "subtitle": "OtelKirala içeriğini buradan yönetebilirsiniz.",
+      "seeded": "Örnek veriler başarıyla yüklendi.",
+      "cards": {
+        "hotels": "Oteller",
+        "destinations": "Bölgeler",
+        "testimonials": "Yorumlar"
+      },
+      "empty": {
+        "title": "Veritabanı boş",
+        "body": "Siteyi örnek otel, bölge ve yorum verileriyle doldurmak için aşağıdaki butonu kullanabilirsiniz.",
+        "seedButton": "Örnek Verileri Yükle"
+      }
+    },
+    "hotels": {
+      "list": {
+        "title": "Oteller",
+        "subtitle": "Sitede listelenen otelleri yönetin.",
+        "add": "+ Otel Ekle",
+        "colHotel": "Otel",
+        "colLocation": "Konum",
+        "colPrice": "Fiyat",
+        "colRating": "Puan",
+        "empty": "Henüz otel eklenmemiş. Panelden veya \"Örnek Verileri Yükle\" ile başlayabilirsiniz.",
+        "deleteConfirm": "\"{name}\" silinsin mi?"
+      },
+      "new": {
+        "title": "Yeni Otel",
+        "subtitle": "Yeni bir otel ekleyip site üzerinde yayınlayın."
+      },
+      "edit": {
+        "title": "Oteli Düzenle"
+      },
+      "form": {
+        "name": "Otel Adı",
+        "location": "Konum",
+        "locationPlaceholder": "Bodrum, Muğla",
+        "price": "Gecelik Fiyat (₺)",
+        "rating": "Puan (0-5)",
+        "reviewCount": "Değerlendirme Sayısı",
+        "image": "Görsel URL",
+        "imagePlaceholder": "https://images.unsplash.com/...",
+        "tags": "Etiketler (virgülle ayırın)",
+        "tagsPlaceholder": "Her Şey Dahil, Özel Plaj",
+        "description": "Açıklama",
+        "descriptionPlaceholder": "Otel hakkında detay sayfasında gösterilecek açıklama metni",
+        "images": "Galeri Görselleri (virgülle ayırın)",
+        "imagesPlaceholder": "https://images.unsplash.com/..., https://images.unsplash.com/...",
+        "halalTitle": "Helal Konsept Özellikleri",
+        "save": "Değişiklikleri Kaydet",
+        "create": "Otel Ekle"
+      },
+      "rooms": {
+        "title": "Oda Tipleri",
+        "namePlaceholder": "Oda adı",
+        "pricePlaceholder": "Fiyat",
+        "capacityPlaceholder": "Kapasite",
+        "imagePlaceholder": "Görsel URL",
+        "remove": "Kaldır",
+        "add": "+ Oda Ekle"
+      },
+      "validation": {
+        "required": "Otel adı, konum ve görsel adresi zorunludur.",
+        "price": "Geçerli bir gecelik fiyat girin.",
+        "rating": "Puan 0 ile 5 arasında olmalıdır.",
+        "reviewCount": "Geçerli bir değerlendirme sayısı girin."
+      }
+    },
+    "destinations": {
+      "list": {
+        "title": "Bölgeler",
+        "subtitle": "Ana sayfada gösterilen popüler bölgeleri yönetin.",
+        "add": "+ Bölge Ekle",
+        "empty": "Henüz bölge eklenmemiş.",
+        "hotelsSuffix": "otel",
+        "deleteConfirm": "\"{name}\" silinsin mi?"
+      },
+      "new": {
+        "title": "Yeni Bölge",
+        "subtitle": "Ana sayfada gösterilecek yeni bir bölge ekleyin."
+      },
+      "edit": {
+        "title": "Bölgeyi Düzenle"
+      },
+      "form": {
+        "name": "Bölge Adı",
+        "namePlaceholder": "Antalya",
+        "hotelCount": "Otel Sayısı",
+        "image": "Görsel URL",
+        "imagePlaceholder": "https://images.unsplash.com/...",
+        "save": "Değişiklikleri Kaydet",
+        "create": "Bölge Ekle"
+      },
+      "validation": {
+        "required": "Bölge adı ve görsel adresi zorunludur.",
+        "hotelCount": "Geçerli bir otel sayısı girin."
+      }
+    },
+    "testimonials": {
+      "list": {
+        "title": "Yorumlar",
+        "subtitle": "Ana sayfada gösterilen misafir yorumlarını yönetin.",
+        "add": "+ Yorum Ekle",
+        "empty": "Henüz yorum eklenmemiş.",
+        "deleteConfirm": "\"{name}\" adlı yorum silinsin mi?"
+      },
+      "new": {
+        "title": "Yeni Yorum",
+        "subtitle": "Ana sayfada gösterilecek yeni bir misafir yorumu ekleyin."
+      },
+      "edit": {
+        "title": "Yorumu Düzenle"
+      },
+      "form": {
+        "hotel": "Otel (opsiyonel)",
+        "hotelNone": "Genel (otele özel değil)",
+        "name": "Ad Soyad",
+        "location": "Şehir",
+        "avatar": "Avatar URL",
+        "avatarPlaceholder": "https://i.pravatar.cc/150?img=1",
+        "quote": "Yorum Metni",
+        "rating": "Puan (1-5)",
+        "save": "Değişiklikleri Kaydet",
+        "create": "Yorum Ekle"
+      },
+      "validation": {
+        "required": "Ad, konum, avatar adresi ve yorum metni zorunludur.",
+        "rating": "Puan 1 ile 5 arasında olmalıdır."
+      }
+    }
+  }
+}
