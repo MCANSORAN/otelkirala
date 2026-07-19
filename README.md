@@ -1,5 +1,20 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## MongoDB ve Admin Paneli Kurulumu
+
+Site verileri (oteller, bölgeler, yorumlar) MongoDB'de tutulur ve `/admin` altındaki yönetici panelinden düzenlenir.
+
+1. [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register)'ta ücretsiz bir cluster oluşturun (veya kendi MongoDB sunucunuzu kullanın).
+2. "Connect > Drivers" adımından connection string'i alın.
+3. `.env.example` dosyasını `.env.local` olarak kopyalayıp aşağıdaki değerleri doldurun:
+   - `MONGODB_URI`: Atlas connection string'iniz.
+   - `ADMIN_USERNAME` / `ADMIN_PASSWORD`: Admin paneline giriş bilgileri.
+   - `SESSION_SECRET`: `openssl rand -base64 32` komutuyla üretilen rastgele bir anahtar.
+4. `npm run dev` ile sunucuyu başlatın, `http://localhost:3000/admin/login` adresinden giriş yapın.
+5. Veritabanı boşsa panel ana sayfasında çıkan "Örnek Verileri Yükle" butonuyla başlangıç verilerini ekleyebilirsiniz.
+
+`MONGODB_URI` tanımlı değilse veya bağlantı kurulamazsa, genel site örnek (statik) verilerle çalışmaya devam eder; admin panelindeki sayfalar ise bağlantı hatası uyarısı gösterir.
+
 ## Getting Started
 
 First, run the development server:
