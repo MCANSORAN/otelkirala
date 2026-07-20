@@ -32,7 +32,7 @@ export default function RoomsList({ rooms, dict }: { rooms: Room[]; dict: Dictio
               </p>
               <button
                 type="button"
-                className="shrink-0 rounded-full bg-gold-500 px-5 py-2 text-sm font-semibold text-brand-950 transition-colors hover:bg-gold-600"
+                className="shrink-0 rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-700"
               >
                 {dict.selectRoom}
               </button>

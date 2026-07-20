@@ -46,7 +46,13 @@
     }
   },
   "popularHotels": {
-    "title": "Tüm Otellerimiz",
+    "eyebrow": "Öne Çıkan",
+    "title": "Öne Çıkan Oteller",
+    "subtitle": "Misafirlerimizin en çok tercih ettiği, en yüksek puanlı otelleri senin için seçtik.",
+    "viewAll": "Tüm Otelleri Gör"
+  },
+  "allHotels": {
+    "title": "Tüm Oteller",
     "subtitle": "Türkiye'nin dört bir yanındaki otel seçeneklerimizin tamamını keşfedin."
   },
   "hotelCard": {

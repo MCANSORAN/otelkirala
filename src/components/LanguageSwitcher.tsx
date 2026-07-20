@@ -9,7 +9,7 @@ export default function LanguageSwitcher({ lang }: { lang: Locale }) {
   const { switchTo } = useLocaleSwitcher();
 
   return (
-    <div className="flex items-center gap-1 rounded-full border border-gold-500/30 p-0.5 text-xs font-semibold">
+    <div className="flex items-center gap-1 rounded-full border border-brand-200 p-0.5 text-xs font-semibold">
       {locales.map((locale) => (
         <button
           key={locale}
@@ -17,7 +17,7 @@ export default function LanguageSwitcher({ lang }: { lang: Locale }) {
           onClick={() => switchTo(locale)}
           aria-current={locale === lang}
           className={`rounded-full px-2.5 py-1 transition-colors ${
-            locale === lang ? "bg-gold-500 text-brand-950" : "text-brand-50/70 hover:text-gold-400"
+            locale === lang ? "bg-brand-600 text-white" : "text-slate-500 hover:text-brand-600"
           }`}
         >
           {LOCALE_LABELS[locale]}

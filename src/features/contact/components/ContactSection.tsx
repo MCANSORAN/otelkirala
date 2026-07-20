@@ -54,7 +54,7 @@ export default function ContactSection({ dict }: { dict: Dictionary["contactPage
 
           <button
             type="submit"
-            className="mt-5 rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-brand-950 transition-colors hover:bg-gold-600"
+            className="mt-5 rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700"
           >
             {dict.form.submit}
           </button>

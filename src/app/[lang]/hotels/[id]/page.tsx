@@ -96,7 +96,7 @@ export default async function HotelDetailPage({
               </p>
               <button
                 type="button"
-                className="mt-4 w-full rounded-full bg-gold-500 px-5 py-3 text-sm font-semibold text-brand-950 transition-colors hover:bg-gold-600"
+                className="mt-4 w-full rounded-full bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-700"
               >
                 {dict.hotelDetail.bookNow}
               </button>

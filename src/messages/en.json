@@ -46,7 +46,13 @@
     }
   },
   "popularHotels": {
-    "title": "All Our Hotels",
+    "eyebrow": "Featured",
+    "title": "Featured Hotels",
+    "subtitle": "We've handpicked the highest-rated hotels our guests love most.",
+    "viewAll": "View All Hotels"
+  },
+  "allHotels": {
+    "title": "All Hotels",
     "subtitle": "Explore our full range of hotels across Turkey."
   },
   "hotelCard": {

@@ -14,7 +14,7 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang);
-  return { title: `${dict.popularHotels.title} | OtelKirala` };
+  return { title: `${dict.allHotels.title} | OtelKirala` };
 }
 
 export default async function HotelsPage({
@@ -32,7 +32,7 @@ export default async function HotelsPage({
     <>
       <Header lang={lang} dict={dict.header} user={user} />
       <main>
-        <PopularHotels dict={dict.popularHotels} hotelCardDict={dict.hotelCard} lang={lang} />
+        <PopularHotels dict={dict.allHotels} hotelCardDict={dict.hotelCard} lang={lang} />
       </main>
       <Footer dict={dict.footer} lang={lang} />
     </>

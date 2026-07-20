@@ -27,11 +27,11 @@ export default function Header({
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gold-500/20 bg-brand-900/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-brand-100 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href={`/${lang}`}
-          className="flex items-center gap-2 text-xl font-bold tracking-tight text-gold-400"
+          className="flex items-center gap-2 text-xl font-extrabold tracking-tight text-brand-700"
         >
           <span className="text-2xl">🏨</span>
           {dict.brand}
@@ -42,7 +42,7 @@ export default function Header({
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-brand-50/80 transition-colors hover:text-gold-400"
+              className="text-sm font-medium text-slate-600 transition-colors hover:text-brand-600"
             >
               {link.label}
             </Link>
@@ -53,13 +53,13 @@ export default function Header({
           <LanguageSwitcher lang={lang} />
           {user ? (
             <>
-              <span className="text-sm font-medium text-brand-50/80">
+              <span className="text-sm font-medium text-slate-600">
                 {dict.greeting}, {user.name}
               </span>
               <form action={logoutAction.bind(null, lang)}>
                 <button
                   type="submit"
-                  className="text-sm font-medium text-brand-50/80 transition-colors hover:text-gold-400"
+                  className="text-sm font-medium text-slate-600 transition-colors hover:text-brand-600"
                 >
                   {dict.logout}
                 </button>
@@ -68,21 +68,21 @@ export default function Header({
           ) : (
             <Link
               href={`/${lang}/login`}
-              className="text-sm font-medium text-brand-50/80 transition-colors hover:text-gold-400"
+              className="text-sm font-medium text-slate-600 transition-colors hover:text-brand-600"
             >
               {dict.login}
             </Link>
           )}
           <Link
             href={`/${lang}/hotels`}
-            className="rounded-full bg-gold-500 px-5 py-2 text-sm font-semibold text-brand-950 shadow-sm transition-colors hover:bg-gold-600"
+            className="rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white shadow-sm shadow-brand-600/20 transition-colors hover:bg-brand-700"
           >
             {dict.cta}
           </Link>
         </div>
 
         <button
-          className="flex h-9 w-9 items-center justify-center rounded-lg border border-gold-500/30 text-brand-50 md:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-lg border border-brand-200 text-brand-700 md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label={dict.menuToggle}
         >
@@ -91,13 +91,13 @@ export default function Header({
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-gold-500/20 px-6 py-4 md:hidden">
+        <nav className="flex flex-col gap-1 border-t border-brand-100 px-6 py-4 md:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-brand-50/90 hover:bg-brand-800"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-brand-50"
             >
               {link.label}
             </Link>
@@ -107,11 +107,11 @@ export default function Header({
           </div>
           {user ? (
             <div className="mt-2 flex items-center justify-between px-3">
-              <span className="text-sm font-medium text-brand-50/80">
+              <span className="text-sm font-medium text-slate-600">
                 {dict.greeting}, {user.name}
               </span>
               <form action={logoutAction.bind(null, lang)}>
-                <button type="submit" className="text-sm font-medium text-red-400">
+                <button type="submit" className="text-sm font-medium text-red-500">
                   {dict.logout}
                 </button>
               </form>
@@ -120,7 +120,7 @@ export default function Header({
             <Link
               href={`/${lang}/login`}
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-lg px-3 py-2 text-center text-sm font-medium text-brand-50/90 hover:bg-brand-800"
+              className="mt-2 rounded-lg px-3 py-2 text-center text-sm font-medium text-slate-700 hover:bg-brand-50"
             >
               {dict.login}
             </Link>
@@ -128,7 +128,7 @@ export default function Header({
           <Link
             href={`/${lang}/hotels`}
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-full bg-gold-500 px-4 py-2 text-center text-sm font-semibold text-brand-950 transition-colors hover:bg-gold-600"
+            className="mt-2 rounded-full bg-brand-600 px-4 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-brand-700"
           >
             {dict.cta}
           </Link>

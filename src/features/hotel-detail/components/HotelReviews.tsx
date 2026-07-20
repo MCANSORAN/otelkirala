@@ -30,7 +30,7 @@ export default function HotelReviews({
                   <p className="text-sm font-semibold text-neutral-900 dark:text-white">{review.name}</p>
                   <p className="text-xs text-neutral-500 dark:text-neutral-400">{review.location}</p>
                 </div>
-                <span className="ml-auto text-sm font-semibold text-gold-500">★ {review.rating}</span>
+                <span className="ml-auto text-sm font-semibold text-amber-400">★ {review.rating}</span>
               </div>
               <p className="mt-3 text-sm text-neutral-600 dark:text-neutral-300">{review.quote}</p>
             </div>

@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
+/* `dark:` yardımcılarını işletim sisteminin karanlık moduna değil, kök öğeye
+   eklenen `.dark` sınıfına bağlarız. Böylece pazarlama sitesi her koşulda
+   ferah açık temada (mavi/beyaz) tutarlı görünür; istenirse `.dark` ile açılır. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
 }
 
 @theme inline {
@@ -12,46 +17,49 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Kurumsal marka paleti: bordo/şarap (brand) + antik altın (gold) + krem (cream).
-   Butik-lüks bir kimlik için; tüm site bu üç tokenı kullanır, renk değişimi
-   yalnızca buradan yapılır. */
+/* Kurumsal marka paleti: okyanus mavisi (brand) + turkuaz/gök vurgu (accent, "gold" tokenı)
+   + ferah gök-beyaz (cream). Deniz/tatil hissi veren, aydınlık ve modern bir kimlik;
+   tüm site bu tokenları kullanır, renk değişimi yalnızca buradan yapılır. */
 @theme {
-  --color-brand-50: #fbf3f6;
-  --color-brand-100: #f6e5ea;
-  --color-brand-200: #ebc4d0;
-  --color-brand-300: #dc97a8;
-  --color-brand-400: #c9667e;
-  --color-brand-500: #b23d59;
-  --color-brand-600: #952c44;
-  --color-brand-700: #782234;
-  --color-brand-800: #5e1a29;
-  --color-brand-900: #4a1420;
-  --color-brand-950: #2b0b13;
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+  --color-brand-950: #172554;
 
-  --color-gold-50: #fbf7ea;
-  --color-gold-100: #f5ecc8;
-  --color-gold-200: #ecda99;
-  --color-gold-300: #e2c86a;
-  --color-gold-400: #d6b444;
-  --color-gold-500: #c9a227;
-  --color-gold-600: #ac8820;
-  --color-gold-700: #87691d;
-  --color-gold-800: #6e561d;
-  --color-gold-900: #5c481d;
-  --color-gold-950: #342810;
+  /* "gold" tokenı artık turkuaz/gök vurgu rengidir (deniz/havuz hissi). */
+  --color-gold-50: #ecfeff;
+  --color-gold-100: #cffafe;
+  --color-gold-200: #a5f3fc;
+  --color-gold-300: #67e8f9;
+  --color-gold-400: #22d3ee;
+  --color-gold-500: #06b6d4;
+  --color-gold-600: #0891b2;
+  --color-gold-700: #0e7490;
+  --color-gold-800: #155e75;
+  --color-gold-900: #164e63;
+  --color-gold-950: #083344;
 
-  --color-cream: #f7f1ec;
+  --color-cream: #f0f7ff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--color-brand-600);
+  color: #ffffff;
 }
