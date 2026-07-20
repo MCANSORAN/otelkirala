@@ -1,11 +1,12 @@
 import Image from "next/image";
 import type { Dictionary } from "@/messages/dictionaries";
+import type { Locale } from "@/constants/locales";
 import HotelSearchForm from "./HotelSearchForm";
 
-export default function Hero({ dict }: { dict: Dictionary["hero"] }) {
+export default function Hero({ dict, lang }: { dict: Dictionary["hero"]; lang: Locale }) {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-brand-950">
+    <section className="relative">
+      <div className="absolute inset-0 -z-10 overflow-hidden bg-brand-950">
         <Image
           src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&auto=format&fit=crop"
           alt={dict.imageAlt}
@@ -33,7 +34,7 @@ export default function Hero({ dict }: { dict: Dictionary["hero"] }) {
         </h1>
         <p className="mt-4 max-w-xl text-base text-brand-50/90 sm:text-lg">{dict.subtitle}</p>
 
-        <HotelSearchForm dict={dict.form} />
+        <HotelSearchForm dict={dict.form} lang={lang} />
 
         <div className="mt-12 grid grid-cols-3 gap-8 text-center sm:gap-14">
           <div>
