@@ -55,7 +55,13 @@
   },
   "allHotels": {
     "title": "All Hotels",
-    "subtitle": "Explore our full range of hotels across Turkey."
+    "subtitle": "Explore our full range of hotels across Turkey.",
+    "searchPlaceholder": "Search by hotel name or city...",
+    "searchAction": "Search",
+    "resultsSuffix": "hotels found",
+    "clearSearch": "Clear search",
+    "emptyTitle": "No results found",
+    "emptyText": "Check your search or try a different city or hotel name."
   },
   "hotelCard": {
     "reviews": "reviews",

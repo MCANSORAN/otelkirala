@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import type { Dictionary } from "@/messages/dictionaries";
 import type { Locale } from "@/constants/locales";
 
@@ -14,7 +15,9 @@ export default function HotelSearchForm({
   lang: Locale;
 }) {
   const locale = lang === "tr" ? "tr-TR" : "en-US";
+  const router = useRouter();
 
+  const [destination, setDestination] = useState("");
   const [openPanel, setOpenPanel] = useState<PanelKey>(null);
   const [viewMonth, setViewMonth] = useState(() => {
     const now = new Date();
@@ -53,6 +56,19 @@ export default function HotelSearchForm({
     setOpenPanel((current) => (current === panel ? null : panel));
   }
 
+  function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const params = new URLSearchParams();
+    const trimmed = destination.trim();
+    if (trimmed) params.set("q", trimmed);
+    if (checkIn) params.set("checkin", toISODate(checkIn));
+    if (checkOut) params.set("checkout", toISODate(checkOut));
+    params.set("adults", String(adults));
+    if (children > 0) params.set("children", String(children));
+    const qs = params.toString();
+    router.push(`/${lang}/hotels${qs ? `?${qs}` : ""}`);
+  }
+
   function handleDayClick(date: Date) {
     if (date < startOfDay(new Date())) return;
 
@@ -82,11 +98,16 @@ export default function HotelSearchForm({
       : `${adults} ${dict.adultsLabel}`;
 
   return (
-    <form className="mt-10 w-full max-w-4xl rounded-2xl bg-white p-2 text-left shadow-2xl shadow-brand-950/25 ring-1 ring-black/5">
+    <form
+      onSubmit={handleSubmit}
+      className="mt-10 w-full max-w-4xl rounded-2xl bg-white p-2 text-left shadow-2xl shadow-brand-950/25 ring-1 ring-black/5"
+    >
       <div className="flex flex-col divide-y divide-slate-100 sm:flex-row sm:items-stretch sm:divide-x sm:divide-y-0">
         <Field icon={<IconPin className="h-5 w-5" />} label={dict.destinationLabel} className="sm:min-w-0 sm:flex-1">
           <input
             type="text"
+            value={destination}
+            onChange={(event) => setDestination(event.target.value)}
             placeholder={dict.destinationPlaceholder}
             className="w-full bg-transparent text-sm font-semibold text-slate-900 outline-none placeholder:font-normal placeholder:text-slate-400"
           />
@@ -381,6 +402,13 @@ function Counter({
       </span>
     </div>
   );
+}
+
+function toISODate(date: Date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 function startOfDay(date: Date) {

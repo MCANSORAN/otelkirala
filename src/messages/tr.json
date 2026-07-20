@@ -55,7 +55,13 @@
   },
   "allHotels": {
     "title": "Tüm Oteller",
-    "subtitle": "Türkiye'nin dört bir yanındaki otel seçeneklerimizin tamamını keşfedin."
+    "subtitle": "Türkiye'nin dört bir yanındaki otel seçeneklerimizin tamamını keşfedin.",
+    "searchPlaceholder": "Otel adı veya şehir ara...",
+    "searchAction": "Ara",
+    "resultsSuffix": "otel bulundu",
+    "clearSearch": "Aramayı temizle",
+    "emptyTitle": "Sonuç bulunamadı",
+    "emptyText": "Aramanı kontrol et ya da farklı bir şehir veya otel adı dene."
   },
   "hotelCard": {
     "reviews": "değerlendirme",
