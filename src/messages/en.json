@@ -27,16 +27,18 @@
     "form": {
       "destinationLabel": "Where are you going?",
       "destinationPlaceholder": "Antalya, Bodrum, Cappadocia...",
+      "datesLabel": "Dates",
       "checkinLabel": "Check-in",
       "checkoutLabel": "Check-out",
+      "selectDates": "Select dates",
+      "clear": "Clear",
+      "apply": "Apply",
       "guestsLabel": "Guests",
-      "guestsOptions": [
-        "2 Adults",
-        "1 Adult",
-        "2 Adults, 1 Child",
-        "2 Adults, 2 Children",
-        "4 Adults"
-      ],
+      "adultsLabel": "Adults",
+      "adultsHelp": "Ages 13+",
+      "childrenLabel": "Children",
+      "childrenHelp": "Ages 0-12",
+      "done": "Done",
       "submit": "Search Hotels"
     },
     "stats": {

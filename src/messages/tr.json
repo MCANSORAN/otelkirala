@@ -27,16 +27,18 @@
     "form": {
       "destinationLabel": "Nereye gidiyorsun?",
       "destinationPlaceholder": "Antalya, Bodrum, Kapadokya...",
+      "datesLabel": "Tarihler",
       "checkinLabel": "Giriş",
       "checkoutLabel": "Çıkış",
+      "selectDates": "Tarih seç",
+      "clear": "Temizle",
+      "apply": "Uygula",
       "guestsLabel": "Misafir",
-      "guestsOptions": [
-        "2 Yetişkin",
-        "1 Yetişkin",
-        "2 Yetişkin, 1 Çocuk",
-        "2 Yetişkin, 2 Çocuk",
-        "4 Yetişkin"
-      ],
+      "adultsLabel": "Yetişkin",
+      "adultsHelp": "13 yaş ve üzeri",
+      "childrenLabel": "Çocuk",
+      "childrenHelp": "0-12 yaş",
+      "done": "Tamam",
       "submit": "Otel Ara"
     },
     "stats": {
