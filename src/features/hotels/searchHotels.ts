@@ -2,7 +2,7 @@ import type { Hotel } from "@/types";
 
 // Türkçe karakterleri ve büyük/küçük harf farkını yok sayarak karşılaştırma
 // yapabilmek için metni sadeleştirir. Örn: "İSTANBUL", "istanbul", "Istanbul" eşleşir.
-export function normalizeText(value: string): string {
+function normalizeText(value: string): string {
   return value
     .replace(/İ/g, "i")
     .replace(/I/g, "i")

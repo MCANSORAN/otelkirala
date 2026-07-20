@@ -15,14 +15,23 @@ export default async function Testimonials({ dict }: { dict: Dictionary["testimo
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {testimonials.map((t) => (
+        {testimonials.map((t) => {
+          // rating kesirli olabilir (ör. 4.8); yıldız sayısını 0-5 aralığına yuvarla.
+          // Doğrudan repeat(t.rating) kullanmak kesirli değerlerde yıldızı kırpar ve
+          // aralık dışı bir değerde repeat(negatif) RangeError fırlatır.
+          const filledStars = Math.max(0, Math.min(5, Math.round(t.rating)));
+
+          return (
           <figure
             key={t.id}
             className="flex flex-col rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-lg hover:shadow-brand-600/5"
           >
-            <div className="text-lg text-amber-400" aria-hidden>
-              {"★".repeat(t.rating)}
-              <span className="text-slate-200">{"★".repeat(5 - t.rating)}</span>
+            <div className="flex items-center gap-2 text-lg text-amber-400">
+              <span aria-hidden>
+                {"★".repeat(filledStars)}
+                <span className="text-slate-200">{"★".repeat(5 - filledStars)}</span>
+              </span>
+              <span className="text-sm font-semibold text-slate-700">{t.rating}</span>
             </div>
             <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-slate-700">
               &ldquo;{t.quote}&rdquo;
@@ -37,7 +46,8 @@ export default async function Testimonials({ dict }: { dict: Dictionary["testimo
               </div>
             </figcaption>
           </figure>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
