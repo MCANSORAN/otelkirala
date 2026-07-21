@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, getDictionary } from "@/messages/dictionaries";
 import { localeAlternates, breadcrumbJsonLd, itemListJsonLd, faqJsonLd } from "@/utils/seo";
-import { getCurrentUser } from "@/services/customerAuth.service";
-import { getHotels } from "@/repositories/hotel.repository";
+import { getHotelCards } from "@/repositories/hotel.repository";
 import { searchHotels } from "@/features/hotels/searchHotels";
 import JsonLd from "@/components/JsonLd";
 import ContentSection from "@/components/ContentSection";
@@ -39,7 +38,8 @@ export default async function HotelsPage({
   if (!hasLocale(lang)) notFound();
 
   const dict = getDictionary(lang);
-  const user = await getCurrentUser();
+  // Otel kartları önbellekli + projeksiyonlu. Kullanıcı Header'da istemci tarafında çekilir.
+  const allHotels = await getHotelCards();
 
   const resolvedParams = await searchParams;
   const query = typeof resolvedParams.q === "string" ? resolvedParams.q : "";
@@ -49,7 +49,6 @@ export default async function HotelsPage({
     if (typeof value === "string" && value) preserved[key] = value;
   }
 
-  const allHotels = await getHotels();
   const hotels = searchHotels(allHotels, query);
 
   const structuredData = [
@@ -64,7 +63,7 @@ export default async function HotelsPage({
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header lang={lang} dict={dict.header} user={user} />
+      <Header lang={lang} dict={dict.header} />
       <main>
         <HotelSearchSection
           hotels={hotels}

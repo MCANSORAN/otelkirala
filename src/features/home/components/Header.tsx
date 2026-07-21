@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Dictionary } from "@/messages/dictionaries";
 import type { Locale } from "@/constants/locales";
 import type { User } from "@/types";
@@ -37,13 +37,29 @@ function BrandMark() {
 export default function Header({
   lang,
   dict,
-  user,
 }: {
   lang: Locale;
   dict: Dictionary["header"];
-  user: User | null;
 }) {
   const [open, setOpen] = useState(false);
+  // Sayfalar statik/ISR kalsın diye kullanıcı sunucuda değil, burada (mount sonrası)
+  // /api/me üzerinden çekilir. Başlangıçta çıkış yapmış görünür; oturum varsa değişir.
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    let active = true;
+    fetch("/api/me")
+      .then((res) => (res.ok ? res.json() : { user: null }))
+      .then((data: { user: User | null }) => {
+        if (active) setUser(data.user ?? null);
+      })
+      .catch(() => {
+        /* ağ hatası: çıkış yapmış durumda kal */
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const navLinks = [
     { href: `/${lang}/hotels`, label: dict.nav.hotels },

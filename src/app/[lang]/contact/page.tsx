@@ -7,7 +7,6 @@ import {
   organizationJsonLd,
   faqJsonLd,
 } from "@/utils/seo";
-import { getCurrentUser } from "@/services/customerAuth.service";
 import JsonLd from "@/components/JsonLd";
 import Header from "@/features/home/components/Header";
 import Footer from "@/features/home/components/Footer";
@@ -37,7 +36,6 @@ export default async function ContactPage({
   if (!hasLocale(lang)) notFound();
 
   const dict = getDictionary(lang);
-  const user = await getCurrentUser();
 
   const structuredData = [
     contactPageJsonLd(lang, {
@@ -51,7 +49,7 @@ export default async function ContactPage({
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header lang={lang} dict={dict.header} user={user} />
+      <Header lang={lang} dict={dict.header} />
       <main>
         <ContactSection dict={dict.contactPage} />
         <Faq dict={dict.contactPage.faq} />

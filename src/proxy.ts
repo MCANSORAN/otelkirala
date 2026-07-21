@@ -26,5 +26,6 @@ export default function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next|.*\\..*).*)"],
+  // /api hariç: API uçları (ör. /api/me) locale yönlendirmesine takılmamalı.
+  matcher: ["/((?!_next|api|.*\\..*).*)"],
 };

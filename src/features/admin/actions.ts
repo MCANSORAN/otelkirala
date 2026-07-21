@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { createSession, deleteSession, verifyCredentials, verifySession } from "@/services/auth.service";
 import { seedDatabase } from "@/services/seed.service";
@@ -22,9 +22,12 @@ import type { ReservationStatus, ServiceResult } from "@/types";
 // Oluştur/güncelle akışı: doğrula → çalıştır → hata varsa forma geri dön, yoksa
 // listeyi ve ana sayfayı tazeleyip listeye dön. redirect() bir istisna fırlattığı
 // için tazeleme yalnızca başarı durumunda çalışır.
+// tags: genel sayfaların unstable_cache girdilerini (bkz. repositories) tazelemek için
+// revalidateTag'e verilir; böylece admin değişikliği önbelleğe rağmen anında yansır.
 async function runMutation(
   errorPath: string,
   listPath: string,
+  tags: readonly string[],
   mutate: () => Promise<ServiceResult>
 ): Promise<void> {
   await verifySession();
@@ -34,11 +37,14 @@ async function runMutation(
   }
   revalidatePath(listPath);
   revalidatePath("/");
+  // expire: 0 → etiketli önbellek anında geçersiz; admin değişikliği ilk görüntülemede yansır.
+  for (const tag of tags) revalidateTag(tag, { expire: 0 });
   redirect(listPath);
 }
 
 async function runDelete(
   listPath: string,
+  tags: readonly string[],
   formData: FormData,
   remove: (id: string) => Promise<ServiceResult>
 ): Promise<void> {
@@ -51,6 +57,7 @@ async function runDelete(
     }
     revalidatePath(listPath);
     revalidatePath("/");
+    for (const tag of tags) revalidateTag(tag, { expire: 0 });
   }
   redirect(listPath);
 }
@@ -85,57 +92,62 @@ export async function seedAction(): Promise<void> {
 
   revalidatePath("/admin", "layout");
   revalidatePath("/");
+  revalidateTag("hotels", { expire: 0 });
+  revalidateTag("destinations", { expire: 0 });
+  revalidateTag("testimonials", { expire: 0 });
   redirect("/admin?seeded=1");
 }
 
 // ---------- Oteller ----------
 
 export async function createHotelAction(formData: FormData): Promise<void> {
-  await runMutation("/admin/hotels/new", "/admin/hotels", () => createHotelFromForm(formData));
+  await runMutation("/admin/hotels/new", "/admin/hotels", ["hotels"], () => createHotelFromForm(formData));
 }
 
 export async function updateHotelAction(id: string, formData: FormData): Promise<void> {
-  await runMutation(`/admin/hotels/${id}`, "/admin/hotels", () => updateHotelFromForm(id, formData));
+  await runMutation(`/admin/hotels/${id}`, "/admin/hotels", ["hotels"], () =>
+    updateHotelFromForm(id, formData)
+  );
 }
 
 export async function deleteHotelAction(formData: FormData): Promise<void> {
-  await runDelete("/admin/hotels", formData, deleteHotelById);
+  await runDelete("/admin/hotels", ["hotels"], formData, deleteHotelById);
 }
 
 // ---------- Bölgeler ----------
 
 export async function createDestinationAction(formData: FormData): Promise<void> {
-  await runMutation("/admin/destinations/new", "/admin/destinations", () =>
+  await runMutation("/admin/destinations/new", "/admin/destinations", ["destinations"], () =>
     createDestinationFromForm(formData)
   );
 }
 
 export async function updateDestinationAction(id: string, formData: FormData): Promise<void> {
-  await runMutation(`/admin/destinations/${id}`, "/admin/destinations", () =>
+  await runMutation(`/admin/destinations/${id}`, "/admin/destinations", ["destinations"], () =>
     updateDestinationFromForm(id, formData)
   );
 }
 
 export async function deleteDestinationAction(formData: FormData): Promise<void> {
-  await runDelete("/admin/destinations", formData, deleteDestinationById);
+  await runDelete("/admin/destinations", ["destinations"], formData, deleteDestinationById);
 }
 
 // ---------- Yorumlar ----------
 
 export async function createTestimonialAction(formData: FormData): Promise<void> {
-  await runMutation("/admin/testimonials/new", "/admin/testimonials", () =>
+  await runMutation("/admin/testimonials/new", "/admin/testimonials", ["testimonials"], () =>
     createTestimonialFromForm(formData)
   );
 }
 
 export async function updateTestimonialAction(id: string, formData: FormData): Promise<void> {
-  await runMutation(`/admin/testimonials/${id}`, "/admin/testimonials", () =>
+  await runMutation(`/admin/testimonials/${id}`, "/admin/testimonials", ["testimonials"], () =>
     updateTestimonialFromForm(id, formData)
   );
 }
 
 export async function deleteTestimonialAction(formData: FormData): Promise<void> {
-  await runDelete("/admin/testimonials", formData, deleteTestimonialById);
+  await runDelete("/admin/testimonials", ["testimonials"], formData, deleteTestimonialById);
 }
 
 // ---------- Talepler ----------
@@ -156,5 +168,6 @@ export async function updateRequestStatusAction(id: string, formData: FormData):
 }
 
 export async function deleteRequestAction(formData: FormData): Promise<void> {
-  await runDelete("/admin/requests", formData, deleteRequestById);
+  // Talepler yalnızca admin panelinde görünür; genel önbellek etiketi yok.
+  await runDelete("/admin/requests", [], formData, deleteRequestById);
 }

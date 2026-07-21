@@ -1,4 +1,5 @@
 import { ObjectId, type Document, type WithId } from "mongodb";
+import { unstable_cache } from "next/cache";
 import { getDb } from "@/database/mongodb";
 import { seedTestimonials } from "@/lib/seed-data";
 import type { Testimonial } from "@/types";
@@ -17,10 +18,17 @@ function toTestimonial(doc: WithId<Document>): Testimonial {
   };
 }
 
+// Genel sayfalar için yorumları Next veri önbelleğinde tutar (revalidate + "testimonials"
+// etiketi); admin değişikliğinde revalidateTag("testimonials") ile tazelenir.
+const getCachedTestimonials = unstable_cache(getTestimonialsOrThrow, ["public-testimonials"], {
+  tags: ["testimonials"],
+  revalidate: 300,
+});
+
 // Veritabanına bağlanılamazsa örnek verilere düşer; genel (public) sayfalarda kullanılır.
 export async function getTestimonials(): Promise<Testimonial[]> {
   try {
-    return await getTestimonialsOrThrow();
+    return await getCachedTestimonials();
   } catch (error) {
     console.warn("[mongodb] Yorumlar alınamadı, örnek veriler gösteriliyor:", (error as Error).message);
     return seedTestimonials;
@@ -34,12 +42,21 @@ export async function getTestimonialsOrThrow(): Promise<Testimonial[]> {
   return docs.map(toTestimonial);
 }
 
-// Veritabanına bağlanılamazsa örnek verilerde filtreler; otel detay sayfasında kullanılır.
-export async function getTestimonialsByHotelId(hotelId: string): Promise<Testimonial[]> {
-  try {
+// Otele göre yorumlar; hotelId cache anahtarına dahil olur, "testimonials" etiketiyle tazelenir.
+const getCachedTestimonialsByHotelId = unstable_cache(
+  async (hotelId: string): Promise<Testimonial[]> => {
     const db = await getDb();
     const docs = await db.collection(COLLECTION).find({ hotelId }).sort({ createdAt: -1 }).toArray();
     return docs.map(toTestimonial);
+  },
+  ["public-testimonials-by-hotel"],
+  { tags: ["testimonials"], revalidate: 300 }
+);
+
+// Veritabanına bağlanılamazsa örnek verilerde filtreler; otel detay sayfasında kullanılır.
+export async function getTestimonialsByHotelId(hotelId: string): Promise<Testimonial[]> {
+  try {
+    return await getCachedTestimonialsByHotelId(hotelId);
   } catch (error) {
     console.warn("[mongodb] Yorumlar alınamadı, örnek verilerde aranıyor:", (error as Error).message);
     return seedTestimonials.filter((testimonial) => testimonial.hotelId === hotelId);
