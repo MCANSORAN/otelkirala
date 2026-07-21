@@ -15,8 +15,9 @@ import {
   updateTestimonialFromForm,
   deleteTestimonialById,
 } from "@/services/testimonial.service";
+import { updateRequestStatusById, deleteRequestById } from "@/services/request.service";
 import trDictionary from "@/messages/tr.json";
-import type { ServiceResult } from "@/types";
+import type { ReservationStatus, ServiceResult } from "@/types";
 
 // Oluştur/güncelle akışı: doğrula → çalıştır → hata varsa forma geri dön, yoksa
 // listeyi ve ana sayfayı tazeleyip listeye dön. redirect() bir istisna fırlattığı
@@ -135,4 +136,25 @@ export async function updateTestimonialAction(id: string, formData: FormData): P
 
 export async function deleteTestimonialAction(formData: FormData): Promise<void> {
   await runDelete("/admin/testimonials", formData, deleteTestimonialById);
+}
+
+// ---------- Talepler ----------
+
+const REQUEST_STATUSES: ReservationStatus[] = ["new", "contacted", "closed"];
+
+export async function updateRequestStatusAction(id: string, formData: FormData): Promise<void> {
+  await verifySession();
+  const status = String(formData.get("status") ?? "");
+  if ((REQUEST_STATUSES as string[]).includes(status)) {
+    const result = await updateRequestStatusById(id, status as ReservationStatus);
+    if (!result.ok) {
+      redirect(`/admin/requests?error=${encodeURIComponent(result.error)}`);
+    }
+    revalidatePath("/admin/requests");
+  }
+  redirect("/admin/requests");
+}
+
+export async function deleteRequestAction(formData: FormData): Promise<void> {
+  await runDelete("/admin/requests", formData, deleteRequestById);
 }

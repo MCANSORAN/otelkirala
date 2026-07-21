@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, getDictionary } from "@/messages/dictionaries";
+import { localeAlternates } from "@/utils/seo";
 import { getCurrentUser } from "@/services/customerAuth.service";
 import Header from "@/features/home/components/Header";
 import Footer from "@/features/home/components/Footer";
@@ -14,7 +15,10 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang);
-  return { title: `${dict.contactPage.title} | OtelKirala` };
+  return {
+    title: `${dict.contactPage.title} | OtelKirala`,
+    alternates: localeAlternates(lang, "/contact"),
+  };
 }
 
 export default async function ContactPage({

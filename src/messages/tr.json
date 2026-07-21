@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "OtelKirala - Tatil için En İyi Oteller",
-    "description": "Türkiye'nin dört bir yanında en uygun fiyatlarla otel karşılaştır ve tatilini hemen ayırt."
+    "description": "Türkiye'nin dört bir yanındaki binlerce oteli en uygun fiyatlarla karşılaştır, gerçek misafir yorumlarını incele ve tatilin için ideal odayı dakikalar içinde güvenle rezerve et. Antalya, Bodrum ve Kapadokya'da fırsatlar seni bekliyor."
   },
   "header": {
     "brand": "OtelKirala",
@@ -83,10 +83,36 @@
     "roomCapacity": "kişi",
     "roomPerNight": "gecelik",
     "selectRoom": "Bu Odayı Seç",
+    "roomSelected": "Seçildi ✓",
     "reviewsTitle": "Misafir Yorumları",
     "noReviews": "Bu otel için henüz yorum eklenmedi.",
     "startingFrom": "Gecelik başlangıç",
-    "bookNow": "Hemen Rezervasyon Yap"
+    "request": {
+      "title": "Rezervasyon Talebi",
+      "subtitle": "Bilgilerinizi bırakın, ekibimiz en kısa sürede sizinle iletişime geçsin.",
+      "selectedRoom": "Seçilen oda",
+      "noRoomSelected": "Oda seçilmedi (genel talep)",
+      "fullNameLabel": "Ad Soyad",
+      "phoneLabel": "Telefon",
+      "emailLabel": "E-posta (opsiyonel)",
+      "checkInLabel": "Giriş tarihi",
+      "checkOutLabel": "Çıkış tarihi",
+      "guestsLabel": "Kişi sayısı",
+      "messageLabel": "Mesaj / Not (opsiyonel)",
+      "messagePlaceholder": "Özel isteklerinizi yazabilirsiniz",
+      "submit": "Talep Gönder",
+      "submitPending": "Gönderiliyor...",
+      "successTitle": "Talebiniz alındı!",
+      "successBody": "En kısa sürede sizinle iletişime geçeceğiz.",
+      "sendAnother": "Yeni talep gönder",
+      "errors": {
+        "requiredFields": "Ad soyad ve telefon zorunludur.",
+        "invalidEmail": "Geçerli bir e-posta adresi girin.",
+        "invalidGuests": "Kişi sayısı 1 ile 30 arasında olmalıdır.",
+        "invalidDateRange": "Çıkış tarihi giriş tarihinden sonra olmalıdır.",
+        "dbError": "Talep kaydedilemedi. Lütfen daha sonra tekrar deneyin."
+      }
+    }
   },
   "destinations": {
     "title": "Popüler Bölgeler",
@@ -182,6 +208,36 @@
     "placeholder": "E-posta adresin",
     "submit": "Abone Ol"
   },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Rezervasyon, iptal ve helal konsept hakkında merak ettiklerin.",
+    "items": [
+      {
+        "question": "OtelKirala nedir ve nasıl çalışır?",
+        "answer": "OtelKirala, Türkiye'nin dört bir yanındaki otelleri tek bir yerde karşılaştırıp en uygun fiyatlarla rezervasyon yapmanı sağlayan bir otel platformudur. Antalya, Bodrum, Fethiye, Kapadokya ve daha birçok destinasyondaki binlerce oteli fiyata, konuma ve gerçek misafir puanlarına göre inceleyebilir; sana en uygun seçeneği dakikalar içinde bulabilirsin."
+      },
+      {
+        "question": "Otel rezervasyonunu nasıl yaparım?",
+        "answer": "Gitmek istediğin bölgeyi, giriş ve çıkış tarihlerini ve kişi sayısını seç; sana uygun otelleri anında listeleyelim. Beğendiğin otelin sayfasından bir oda seçip rezervasyon talebini birkaç dakika içinde oluşturabilirsin. Ekibimiz talebini onaylamak ve detayları netleştirmek için en kısa sürede seninle iletişime geçer."
+      },
+      {
+        "question": "Helal konsept otel ne anlama geliyor?",
+        "answer": "Helal konsept oteller; ayrı kadın/erkek havuz ve plaj, alkolsüz tesis, helal sertifikalı mutfak, mescit ve ayrı spa gibi olanaklar sunar. OtelKirala'da bu özellikleri filtreleyerek mahremiyetine ve inanç hassasiyetlerine uygun tesisleri kolayca bulabilirsin."
+      },
+      {
+        "question": "Rezervasyonumu ücretsiz iptal edebilir miyim?",
+        "answer": "Birçok otelde girişten 24 saat öncesine kadar ücretsiz iptal hakkın bulunur. İptal koşulları otele ve oda tipine göre değişebildiğinden, rezervasyon öncesinde ilgili otelin iptal politikasını kontrol etmeni öneririz."
+      },
+      {
+        "question": "En uygun fiyat garantisi nasıl işliyor?",
+        "answer": "Rezervasyonunu yaptığın oteli aynı tarih ve koşullarda başka bir yerde daha ucuza bulursan, aradaki farkı sana iade ediyoruz. Böylece her zaman en iyi fiyatı bulduğundan emin olarak tatilini planlayabilirsin."
+      },
+      {
+        "question": "Ödeme ve kişisel bilgilerim güvende mi?",
+        "answer": "Tüm ödeme ve kişisel bilgilerin 256-bit SSL şifreleme ile korunur ve izinsiz olarak üçüncü taraflarla paylaşılmaz. Rezervasyon sürecin boyunca 7/24 Türkçe destek ekibimiz her adımda yanında."
+      }
+    ]
+  },
   "footer": {
     "tagline": "Türkiye'nin en geniş otel ağıyla, hayalindeki tatili planla.",
     "exploreTitle": "Keşfet",
@@ -213,7 +269,8 @@
       "dashboard": "Panel",
       "hotels": "Oteller",
       "destinations": "Bölgeler",
-      "testimonials": "Yorumlar"
+      "testimonials": "Yorumlar",
+      "requests": "Talepler"
     },
     "login": {
       "metaTitle": "Yönetici Girişi | OtelKirala",
@@ -238,7 +295,8 @@
       "cards": {
         "hotels": "Oteller",
         "destinations": "Bölgeler",
-        "testimonials": "Yorumlar"
+        "testimonials": "Yorumlar",
+        "requests": "Talepler"
       },
       "empty": {
         "title": "Veritabanı boş",
@@ -360,6 +418,34 @@
       "validation": {
         "required": "Ad, konum, avatar adresi ve yorum metni zorunludur.",
         "rating": "Puan 1 ile 5 arasında olmalıdır."
+      }
+    },
+    "requests": {
+      "list": {
+        "title": "Rezervasyon Talepleri",
+        "subtitle": "Kullanıcıların otel detay sayfasından gönderdiği talepler.",
+        "empty": "Henüz talep yok.",
+        "deleteConfirm": "\"{name}\" adlı talep silinsin mi?"
+      },
+      "status": {
+        "new": "Yeni",
+        "contacted": "Arandı",
+        "closed": "Kapandı"
+      },
+      "statusLabel": "Durum",
+      "updateStatus": "Güncelle",
+      "fields": {
+        "hotel": "Otel",
+        "room": "Oda",
+        "generalRequest": "Genel talep (oda seçilmedi)",
+        "phone": "Telefon",
+        "email": "E-posta",
+        "guests": "Kişi sayısı",
+        "dates": "Tarihler",
+        "message": "Not",
+        "noEmail": "—",
+        "noDates": "Belirtilmedi",
+        "noMessage": "—"
       }
     }
   }
