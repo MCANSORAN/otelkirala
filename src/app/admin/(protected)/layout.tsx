@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/admin/hotels", label: t.nav.hotels, icon: "🏨" },
   { href: "/admin/destinations", label: t.nav.destinations, icon: "📍" },
   { href: "/admin/testimonials", label: t.nav.testimonials, icon: "💬" },
+  { href: "/admin/requests", label: t.nav.requests, icon: "📨" },
 ];
 
 export default async function AdminProtectedLayout({ children }: { children: React.ReactNode }) {

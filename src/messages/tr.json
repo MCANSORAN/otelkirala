@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "OtelKirala - Tatil için En İyi Oteller",
-    "description": "Türkiye'nin dört bir yanında en uygun fiyatlarla otel karşılaştır ve tatilini hemen ayırt."
+    "description": "Türkiye'nin dört bir yanındaki binlerce oteli en uygun fiyatlarla karşılaştır, gerçek misafir yorumlarını incele ve tatilin için ideal odayı dakikalar içinde güvenle rezerve et. Antalya, Bodrum ve Kapadokya'da fırsatlar seni bekliyor."
   },
   "header": {
     "brand": "OtelKirala",
@@ -14,7 +14,6 @@
     "login": "Giriş Yap",
     "greeting": "Merhaba",
     "logout": "Çıkış Yap",
-    "cta": "Otel Bul",
     "menuToggle": "Menüyü aç/kapat"
   },
   "hero": {
@@ -23,20 +22,22 @@
     "titleBefore": "Hayalindeki tatile",
     "titleHighlight": "bir tık",
     "titleAfter": "uzağında",
-    "subtitle": "En uygun fiyatlarla otel karşılaştır, an rezervasyonunu tamamla, tatilin keyfine bak.",
+    "subtitle": "En uygun oteli bul, güvenle rezervasyon yap, tatilin keyfini çıkar.",
     "form": {
       "destinationLabel": "Nereye gidiyorsun?",
       "destinationPlaceholder": "Antalya, Bodrum, Kapadokya...",
+      "datesLabel": "Tarihler",
       "checkinLabel": "Giriş",
       "checkoutLabel": "Çıkış",
+      "selectDates": "Tarih seç",
+      "clear": "Temizle",
+      "apply": "Uygula",
       "guestsLabel": "Misafir",
-      "guestsOptions": [
-        "2 Yetişkin",
-        "1 Yetişkin",
-        "2 Yetişkin, 1 Çocuk",
-        "2 Yetişkin, 2 Çocuk",
-        "4 Yetişkin"
-      ],
+      "adultsLabel": "Yetişkin",
+      "adultsHelp": "13 yaş ve üzeri",
+      "childrenLabel": "Çocuk",
+      "childrenHelp": "0-12 yaş",
+      "done": "Tamam",
       "submit": "Otel Ara"
     },
     "stats": {
@@ -46,8 +47,53 @@
     }
   },
   "popularHotels": {
-    "title": "Tüm Otellerimiz",
-    "subtitle": "Türkiye'nin dört bir yanındaki otel seçeneklerimizin tamamını keşfedin."
+    "eyebrow": "Öne Çıkan",
+    "title": "Öne Çıkan Oteller",
+    "subtitle": "Misafirlerimizin en çok tercih ettiği, en yüksek puanlı otelleri senin için seçtik.",
+    "viewAll": "Tüm Otelleri Gör"
+  },
+  "allHotels": {
+    "title": "Tüm Oteller",
+    "metaTitle": "Tüm Oteller – Türkiye Genelinde En İyi Otel Fiyatları",
+    "subtitle": "Türkiye'nin dört bir yanındaki otel seçeneklerimizin tamamını keşfedin.",
+    "searchPlaceholder": "Otel adı veya şehir ara...",
+    "searchAction": "Ara",
+    "resultsSuffix": "otel bulundu",
+    "clearSearch": "Aramayı temizle",
+    "emptyTitle": "Sonuç bulunamadı",
+    "emptyText": "Aramanı kontrol et ya da farklı bir şehir veya otel adı dene.",
+    "aboutTitle": "Türkiye'nin en iyi otelleri tek bir adreste",
+    "aboutBody": [
+      "OtelKirala ile Antalya, Bodrum, Fethiye, Marmaris, İstanbul ve Kapadokya başta olmak üzere Türkiye'nin dört bir yanındaki otelleri tek bir sayfada karşılaştırabilirsin. Şehir ya da otel adına göre arama yaparak sana en uygun seçenekleri saniyeler içinde listeleyebilirsin.",
+      "Deniz kenarındaki tatil köylerinden şehir merkezindeki butik otellere, aileler için geniş odalardan çiftlere özel konsept tesislere kadar her bütçeye ve her tatil planına uygun binlerce seçenek burada. Her otel için gerçek misafir puanlarını, gecelik başlangıç fiyatını ve öne çıkan özellikleri görebilirsin.",
+      "Helal konsept arayanlar için ayrı kadın/erkek havuz ve plaj, alkolsüz tesis, helal mutfak ve mescit gibi olanaklara sahip otelleri kolayca bulabilirsin. Beğendiğin otelin sayfasına girip birkaç dakika içinde rezervasyon talebi oluşturabilirsin."
+    ],
+    "faq": {
+      "title": "Oteller hakkında sıkça sorulan sorular",
+      "subtitle": "Otel arama, fiyatlar ve rezervasyon hakkında bilmen gerekenler.",
+      "items": [
+        {
+          "question": "Otelleri nasıl arayabilir ve filtreleyebilirim?",
+          "answer": "Arama kutusuna şehir ya da otel adı yazarak sonuçları anında daraltabilirsin. Ana sayfadaki arama formundan giriş-çıkış tarihi ve kişi sayısı da seçebilir, sana uygun otelleri bu sayfada listeleyebilirsin."
+        },
+        {
+          "question": "Gösterilen fiyatlar neyi kapsıyor?",
+          "answer": "Otel kartlarında görünen fiyatlar, ilgili otelin gecelik başlangıç fiyatını (₺ cinsinden) gösterir. Nihai tutar seçtiğin oda tipine, tarih aralığına ve kişi sayısına göre değişebilir; detayları otel sayfasında görebilirsin."
+        },
+        {
+          "question": "Listelenen tüm oteller helal konsept mi?",
+          "answer": "Hayır, listede her tarz otel bulunur. Helal konsept tesisleri arıyorsan otel sayfalarındaki 'Helal Konsept Özellikleri' bölümüne bakabilir; ayrı havuz/plaj, alkolsüz tesis, helal mutfak ve mescit gibi olanakları kontrol edebilirsin."
+        },
+        {
+          "question": "Arama sonuçları neye göre sıralanıyor?",
+          "answer": "Oteller en son eklenenler önce gelecek şekilde listelenir. Arama yaptığında yalnızca adı veya şehri aramanla eşleşen oteller gösterilir."
+        },
+        {
+          "question": "Rezervasyonu bu sayfadan mı yapıyorum?",
+          "answer": "Bu sayfa otelleri karşılaştırman içindir. Beğendiğin otele tıklayıp detay sayfasında oda seçtikten sonra rezervasyon talebini oluşturursun; ekibimiz en kısa sürede seninle iletişime geçer."
+        }
+      ]
+    }
   },
   "hotelCard": {
     "reviews": "değerlendirme",
@@ -70,15 +116,75 @@
     "roomCapacity": "kişi",
     "roomPerNight": "gecelik",
     "selectRoom": "Bu Odayı Seç",
+    "roomSelected": "Seçildi ✓",
     "reviewsTitle": "Misafir Yorumları",
     "noReviews": "Bu otel için henüz yorum eklenmedi.",
     "startingFrom": "Gecelik başlangıç",
-    "bookNow": "Hemen Rezervasyon Yap"
+    "request": {
+      "title": "Rezervasyon Talebi",
+      "subtitle": "Bilgilerinizi bırakın, ekibimiz en kısa sürede sizinle iletişime geçsin.",
+      "selectedRoom": "Seçilen oda",
+      "noRoomSelected": "Oda seçilmedi (genel talep)",
+      "roomsNeededNote": "{count} oda gerekli ({guests} misafir)",
+      "totalPerNight": "Toplam / gece",
+      "firstNameLabel": "Ad",
+      "lastNameLabel": "Soyad",
+      "phoneLabel": "Telefon",
+      "emailLabel": "E-posta (opsiyonel)",
+      "checkInLabel": "Giriş tarihi",
+      "checkOutLabel": "Çıkış tarihi",
+      "adultsLabel": "Yetişkin",
+      "childrenLabel": "Çocuk",
+      "messageLabel": "Mesaj / Not (opsiyonel)",
+      "messagePlaceholder": "Özel isteklerinizi yazabilirsiniz",
+      "submit": "Talep Gönder",
+      "submitPending": "Gönderiliyor...",
+      "successTitle": "Talebiniz alındı!",
+      "successBody": "En kısa sürede sizinle iletişime geçeceğiz.",
+      "sendAnother": "Yeni talep gönder",
+      "errors": {
+        "requiredFields": "Ad soyad ve telefon zorunludur.",
+        "invalidEmail": "Geçerli bir e-posta adresi girin.",
+        "invalidGuests": "Kişi sayısı 1 ile 30 arasında olmalıdır.",
+        "invalidDateRange": "Çıkış tarihi giriş tarihinden sonra olmalıdır.",
+        "dbError": "Talep kaydedilemedi. Lütfen daha sonra tekrar deneyin."
+      }
+    }
   },
   "destinations": {
     "title": "Popüler Bölgeler",
     "subtitle": "Türkiye'nin en çok tercih edilen tatil bölgelerini keşfet.",
-    "hotelsSuffix": "otel"
+    "hotelsSuffix": "otel",
+    "pageTitle": "Türkiye'nin Popüler Tatil Bölgeleri",
+    "pageIntro": "Antalya'nın turkuaz koylarından Kapadokya'nın peri bacalarına, Bodrum'un canlı sahillerinden İstanbul'un tarihi dokusuna kadar Türkiye'nin en çok tercih edilen tatil bölgelerini keşfet. Bir bölgeye tıkla, oradaki otelleri tek bir sayfada karşılaştır.",
+    "aboutTitle": "Hangi bölge sana göre?",
+    "aboutBody": [
+      "Deniz, kum ve güneş arıyorsan Antalya, Bodrum, Fethiye ve Marmaris canlı sahilleri ve mavi bayraklı plajlarıyla öne çıkar. Aileler için sakin koylar ve her şey dahil tesisler, çiftler içinse butik konsept oteller bu bölgelerde bolca bulunur.",
+      "Kültür ve doğa tatili planlıyorsan Kapadokya'nın eşsiz manzaraları ve balon turları, İstanbul'un tarihi yarımadası ile boğaz manzaralı otelleri unutulmaz bir deneyim sunar. Termal tatil için Afyon ve Pamukkale çevresindeki oteller tercih edilebilir.",
+      "Hangi bölgeyi seçersen seç, OtelKirala'da helal konsept tesisler dahil binlerce seçeneği fiyata ve gerçek misafir puanlarına göre karşılaştırabilir, tatilini güvenle planlayabilirsin."
+    ],
+    "faq": {
+      "title": "Bölgeler hakkında sıkça sorulan sorular",
+      "subtitle": "Tatil bölgeleri ve otel seçimi hakkında bilmen gerekenler.",
+      "items": [
+        {
+          "question": "Türkiye'de tatil için en popüler bölgeler hangileri?",
+          "answer": "Antalya, Bodrum, Fethiye, Marmaris, Kapadokya ve İstanbul en çok tercih edilen bölgelerdir. Deniz tatili için Ege ve Akdeniz kıyıları; kültür ve doğa için Kapadokya ile İstanbul öne çıkar."
+        },
+        {
+          "question": "Bir bölgeye tıklayınca ne oluyor?",
+          "answer": "Bir bölgeye tıkladığında, o bölgenin otellerini listeleyen otel arama sayfasına yönlendirilirsin. Oradan fiyat, puan ve özelliklere göre karşılaştırma yapabilirsin."
+        },
+        {
+          "question": "Helal konsept oteller hangi bölgelerde var?",
+          "answer": "Helal konsept oteller başta Antalya, Alanya ve Sapanca olmak üzere birçok bölgede bulunur. Otel sayfalarındaki 'Helal Konsept Özellikleri' bölümünden ayrı havuz/plaj, alkolsüz tesis ve mescit gibi olanakları kontrol edebilirsin."
+        },
+        {
+          "question": "Tatil için en uygun dönem ne zaman?",
+          "answer": "Deniz tatili için Haziran–Eylül arası idealdir. Kapadokya ve İstanbul gibi bölgeler ise ilkbahar ve sonbaharda daha uygun fiyatlı ve keyiflidir. Erken rezervasyon fırsatlarıyla daha uygun fiyatlar yakalayabilirsin."
+        }
+      ]
+    }
   },
   "whyUs": {
     "title": "Neden OtelKirala?",
@@ -113,16 +219,40 @@
   "auth": {
     "login": {
       "title": "Giriş Yap",
+      "metaTitle": "OtelKirala'ya Giriş Yapın – Rezervasyonlarını Yönet",
       "subtitle": "Hesabına giriş yaparak rezervasyonlarını yönet.",
       "emailLabel": "E-posta",
       "passwordLabel": "Şifre",
       "submit": "Giriş Yap",
       "submitPending": "Giriş yapılıyor...",
       "noAccount": "Hesabın yok mu?",
-      "registerLink": "Kayıt Ol"
+      "registerLink": "Kayıt Ol",
+      "faq": {
+        "title": "Giriş Hakkında Sıkça Sorulan Sorular",
+        "subtitle": "Hesabına giriş yaparken en çok merak edilenler.",
+        "items": [
+          {
+            "question": "Hesabıma nasıl giriş yaparım?",
+            "answer": "Kayıt olurken kullandığın e-posta adresini ve şifreni girip Giriş Yap butonuna tıklaman yeterli. Giriş yaptıktan sonra rezervasyon taleplerini ve hesap bilgilerini tek yerden yönetebilirsin."
+          },
+          {
+            "question": "Şifremi unuttum, ne yapabilirim?",
+            "answer": "Şifreni yeniden belirlemek için destek ekibimize destek@otelkirala.com adresinden ulaşabilirsin. Hesabına kayıtlı e-posta ile bize yazdığında en kısa sürede yardımcı oluyoruz."
+          },
+          {
+            "question": "Henüz hesabım yok, nasıl oluşturabilirim?",
+            "answer": "Giriş formunun altındaki Kayıt Ol bağlantısına tıklayarak birkaç dakikada ücretsiz bir hesap oluşturabilirsin. Ad, e-posta ve bir şifre belirlemen yeterli."
+          },
+          {
+            "question": "Giriş yapmak zorunda mıyım?",
+            "answer": "Otelleri ve fiyatları giriş yapmadan da inceleyebilirsin. Ancak rezervasyon taleplerini takip etmek ve bilgilerini kayıtlı tutmak için giriş yapman önerilir."
+          }
+        ]
+      }
     },
     "register": {
       "title": "Hesap Oluştur",
+      "metaTitle": "Ücretsiz OtelKirala Hesabı Oluştur – Hemen Üye Ol",
       "subtitle": "Ücretsiz hesap oluştur, rezervasyonlarını tek yerden yönet.",
       "nameLabel": "Ad Soyad",
       "emailLabel": "E-posta",
@@ -131,7 +261,29 @@
       "submit": "Kayıt Ol",
       "submitPending": "Kayıt oluşturuluyor...",
       "hasAccount": "Zaten hesabın var mı?",
-      "loginLink": "Giriş Yap"
+      "loginLink": "Giriş Yap",
+      "faq": {
+        "title": "Üyelik Hakkında Sıkça Sorulan Sorular",
+        "subtitle": "Hesap oluşturmadan önce en çok merak edilenler.",
+        "items": [
+          {
+            "question": "Üyelik ücretli mi?",
+            "answer": "Hayır. OtelKirala'da hesap oluşturmak tamamen ücretsizdir; herhangi bir üyelik ya da abonelik ücreti alınmaz."
+          },
+          {
+            "question": "Hesap oluşturmak için hangi bilgiler gerekiyor?",
+            "answer": "Yalnızca adın, geçerli bir e-posta adresin ve en az 6 karakterli bir şifre yeterli. Kayıt işlemi yalnızca birkaç dakika sürer."
+          },
+          {
+            "question": "Hesap oluşturmanın avantajları neler?",
+            "answer": "Hesabınla rezervasyon taleplerini tek yerden takip edebilir, iletişim bilgilerini kayıtlı tutabilir ve sonraki rezervasyonlarını çok daha hızlı oluşturabilirsin."
+          },
+          {
+            "question": "Kişisel bilgilerim güvende mi?",
+            "answer": "Bilgilerin yalnızca rezervasyon ve hesap işlemlerin için kullanılır. Şifren güvenli biçimde saklanır ve üçüncü taraflarla paylaşılmaz."
+          }
+        ]
+      }
     },
     "errors": {
       "requiredFields": "Tüm alanları doldurun.",
@@ -145,6 +297,7 @@
   },
   "contactPage": {
     "title": "Bize Ulaşın",
+    "metaTitle": "OtelKirala İletişim – Bize Ulaşın ve Destek Alın",
     "subtitle": "Sorularınız mı var? Ekibimiz size yardımcı olmaktan mutluluk duyar.",
     "infoTitle": "İletişim Bilgileri",
     "emailLabel": "E-posta",
@@ -161,6 +314,32 @@
       "messageLabel": "Mesajınız",
       "messagePlaceholder": "Size nasıl yardımcı olabiliriz?",
       "submit": "Gönder"
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "subtitle": "İletişimle ilgili en çok merak edilenler.",
+      "items": [
+        {
+          "question": "Müşteri destek ekibinize nasıl ulaşabilirim?",
+          "answer": "destek@otelkirala.com adresine e-posta gönderebilir, 0850 000 00 00 numaralı destek hattımızı arayabilir ya da bu sayfadaki iletişim formunu doldurabilirsin. Formdan ilettiğin mesajlar doğrudan destek ekibimize ulaşır."
+        },
+        {
+          "question": "Mesajıma ne kadar sürede yanıt alırım?",
+          "answer": "İletişim formu veya e-posta ile gönderdiğin taleplere genellikle 24 saat içinde dönüş yapıyoruz; hafta içi mesai saatlerinde bu süre çoğunlukla birkaç saate iner."
+        },
+        {
+          "question": "Telefon destek hattınız hangi saatlerde açık?",
+          "answer": "Telefon destek hattımız hafta içi 09:00-18:00 saatleri arasında hizmet verir. E-posta ve iletişim formu taleplerini her gün alıyor, en geç ilk mesai gününde yanıtlıyoruz."
+        },
+        {
+          "question": "Rezervasyonumla ilgili bir sorunda kiminle görüşmeliyim?",
+          "answer": "Mevcut bir rezervasyon talebiyle ilgili sorularında bize e-posta ya da telefonla ulaşabilirsin. Rezervasyon bilgilerini paylaştığında ekibimiz talebini daha hızlı çözüme kavuşturur."
+        },
+        {
+          "question": "İş birliği ve kurumsal talepler için nasıl iletişime geçebilirim?",
+          "answer": "Otel ortaklığı, kurumsal anlaşmalar ve iş birliği önerilerin için destek@otelkirala.com adresine yazabilirsin; ilgili ekibimiz talebini en kısa sürede değerlendirir."
+        }
+      ]
     }
   },
   "newsletter": {
@@ -168,6 +347,36 @@
     "subtitle": "E-bültenimize kayıt ol, özel indirimleri ve son dakika fırsatlarını kaçırma.",
     "placeholder": "E-posta adresin",
     "submit": "Abone Ol"
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Rezervasyon, iptal ve helal konsept hakkında merak ettiklerin.",
+    "items": [
+      {
+        "question": "OtelKirala nedir ve nasıl çalışır?",
+        "answer": "OtelKirala, Türkiye'nin dört bir yanındaki otelleri tek bir yerde karşılaştırıp en uygun fiyatlarla rezervasyon yapmanı sağlayan bir otel platformudur. Antalya, Bodrum, Fethiye, Kapadokya ve daha birçok destinasyondaki binlerce oteli fiyata, konuma ve gerçek misafir puanlarına göre inceleyebilir; sana en uygun seçeneği dakikalar içinde bulabilirsin."
+      },
+      {
+        "question": "Otel rezervasyonunu nasıl yaparım?",
+        "answer": "Gitmek istediğin bölgeyi, giriş ve çıkış tarihlerini ve kişi sayısını seç; sana uygun otelleri anında listeleyelim. Beğendiğin otelin sayfasından bir oda seçip rezervasyon talebini birkaç dakika içinde oluşturabilirsin. Ekibimiz talebini onaylamak ve detayları netleştirmek için en kısa sürede seninle iletişime geçer."
+      },
+      {
+        "question": "Helal konsept otel ne anlama geliyor?",
+        "answer": "Helal konsept oteller; ayrı kadın/erkek havuz ve plaj, alkolsüz tesis, helal sertifikalı mutfak, mescit ve ayrı spa gibi olanaklar sunar. OtelKirala'da bu özellikleri filtreleyerek mahremiyetine ve inanç hassasiyetlerine uygun tesisleri kolayca bulabilirsin."
+      },
+      {
+        "question": "Rezervasyonumu ücretsiz iptal edebilir miyim?",
+        "answer": "Birçok otelde girişten 24 saat öncesine kadar ücretsiz iptal hakkın bulunur. İptal koşulları otele ve oda tipine göre değişebildiğinden, rezervasyon öncesinde ilgili otelin iptal politikasını kontrol etmeni öneririz."
+      },
+      {
+        "question": "En uygun fiyat garantisi nasıl işliyor?",
+        "answer": "Rezervasyonunu yaptığın oteli aynı tarih ve koşullarda başka bir yerde daha ucuza bulursan, aradaki farkı sana iade ediyoruz. Böylece her zaman en iyi fiyatı bulduğundan emin olarak tatilini planlayabilirsin."
+      },
+      {
+        "question": "Ödeme ve kişisel bilgilerim güvende mi?",
+        "answer": "Tüm ödeme ve kişisel bilgilerin 256-bit SSL şifreleme ile korunur ve izinsiz olarak üçüncü taraflarla paylaşılmaz. Rezervasyon sürecin boyunca 7/24 Türkçe destek ekibimiz her adımda yanında."
+      }
+    ]
   },
   "footer": {
     "tagline": "Türkiye'nin en geniş otel ağıyla, hayalindeki tatili planla.",
@@ -200,7 +409,8 @@
       "dashboard": "Panel",
       "hotels": "Oteller",
       "destinations": "Bölgeler",
-      "testimonials": "Yorumlar"
+      "testimonials": "Yorumlar",
+      "requests": "Talepler"
     },
     "login": {
       "metaTitle": "Yönetici Girişi | OtelKirala",
@@ -225,7 +435,8 @@
       "cards": {
         "hotels": "Oteller",
         "destinations": "Bölgeler",
-        "testimonials": "Yorumlar"
+        "testimonials": "Yorumlar",
+        "requests": "Talepler"
       },
       "empty": {
         "title": "Veritabanı boş",
@@ -347,6 +558,38 @@
       "validation": {
         "required": "Ad, konum, avatar adresi ve yorum metni zorunludur.",
         "rating": "Puan 1 ile 5 arasında olmalıdır."
+      }
+    },
+    "requests": {
+      "list": {
+        "title": "Rezervasyon Talepleri",
+        "subtitle": "Kullanıcıların otel detay sayfasından gönderdiği talepler.",
+        "empty": "Henüz talep yok.",
+        "deleteConfirm": "\"{name}\" adlı talep silinsin mi?"
+      },
+      "status": {
+        "new": "Yeni",
+        "contacted": "Arandı",
+        "closed": "Kapandı"
+      },
+      "statusLabel": "Durum",
+      "updateStatus": "Güncelle",
+      "fields": {
+        "hotel": "Otel",
+        "room": "Oda",
+        "generalRequest": "Genel talep (oda seçilmedi)",
+        "phone": "Telefon",
+        "email": "E-posta",
+        "guests": "Kişi sayısı",
+        "adults": "yetişkin",
+        "children": "çocuk",
+        "dates": "Tarihler",
+        "roomCount": "Oda sayısı",
+        "totalPrice": "Toplam (gecelik)",
+        "message": "Not",
+        "noEmail": "—",
+        "noDates": "Belirtilmedi",
+        "noMessage": "—"
       }
     }
   }

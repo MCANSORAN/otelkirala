@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "OtelKirala - The Best Hotels for Your Vacation",
-    "description": "Compare hotels at the best prices across Turkey and book your vacation instantly."
+    "description": "Compare thousands of hotels across Turkey at the best prices, read real guest reviews and book the perfect room for your vacation in just minutes. Discover great deals in Antalya, Bodrum and Cappadocia."
   },
   "header": {
     "brand": "OtelKirala",
@@ -14,7 +14,6 @@
     "login": "Log In",
     "greeting": "Hello",
     "logout": "Log Out",
-    "cta": "Find a Hotel",
     "menuToggle": "Toggle menu"
   },
   "hero": {
@@ -27,16 +26,18 @@
     "form": {
       "destinationLabel": "Where are you going?",
       "destinationPlaceholder": "Antalya, Bodrum, Cappadocia...",
+      "datesLabel": "Dates",
       "checkinLabel": "Check-in",
       "checkoutLabel": "Check-out",
+      "selectDates": "Select dates",
+      "clear": "Clear",
+      "apply": "Apply",
       "guestsLabel": "Guests",
-      "guestsOptions": [
-        "2 Adults",
-        "1 Adult",
-        "2 Adults, 1 Child",
-        "2 Adults, 2 Children",
-        "4 Adults"
-      ],
+      "adultsLabel": "Adults",
+      "adultsHelp": "Ages 13+",
+      "childrenLabel": "Children",
+      "childrenHelp": "Ages 0-12",
+      "done": "Done",
       "submit": "Search Hotels"
     },
     "stats": {
@@ -46,8 +47,53 @@
     }
   },
   "popularHotels": {
-    "title": "All Our Hotels",
-    "subtitle": "Explore our full range of hotels across Turkey."
+    "eyebrow": "Featured",
+    "title": "Featured Hotels",
+    "subtitle": "We've handpicked the highest-rated hotels our guests love most.",
+    "viewAll": "View All Hotels"
+  },
+  "allHotels": {
+    "title": "All Hotels",
+    "metaTitle": "All Hotels – Compare Hotel Prices Across Türkiye",
+    "subtitle": "Explore our full range of hotels across Turkey.",
+    "searchPlaceholder": "Search by hotel name or city...",
+    "searchAction": "Search",
+    "resultsSuffix": "hotels found",
+    "clearSearch": "Clear search",
+    "emptyTitle": "No results found",
+    "emptyText": "Check your search or try a different city or hotel name.",
+    "aboutTitle": "The best hotels in Turkey, all in one place",
+    "aboutBody": [
+      "With OtelKirala you can compare hotels across Turkey — including Antalya, Bodrum, Fethiye, Marmaris, Istanbul and Cappadocia — on a single page. Search by city or hotel name and list the options that suit you best in seconds.",
+      "From seaside holiday resorts to boutique city-centre hotels, from spacious family rooms to couples-only concept properties, you'll find thousands of options here for every budget and every kind of trip. For each hotel you can see real guest ratings, the starting nightly price and standout features.",
+      "If you're looking for a halal-friendly stay, you can easily find hotels with amenities such as separate pools and beaches for women and men, alcohol-free premises, halal cuisine and prayer rooms. Open your chosen hotel's page and create a reservation request in just a few minutes."
+    ],
+    "faq": {
+      "title": "Frequently asked questions about hotels",
+      "subtitle": "What you need to know about searching, prices and booking.",
+      "items": [
+        {
+          "question": "How can I search and filter hotels?",
+          "answer": "Type a city or hotel name into the search box to instantly narrow the results. From the search form on the home page you can also choose check-in and check-out dates and the number of guests, and the matching hotels will be listed on this page."
+        },
+        {
+          "question": "What do the displayed prices include?",
+          "answer": "The prices shown on the hotel cards are the starting nightly price for that hotel (in Turkish lira, ₺). The final amount may vary depending on the room type, date range and number of guests you choose; you can see the details on the hotel's page."
+        },
+        {
+          "question": "Are all the listed hotels halal-friendly?",
+          "answer": "No, the list includes every kind of hotel. If you're looking for halal-friendly properties, check the 'Halal Concept Features' section on the hotel pages for amenities such as separate pools/beaches, alcohol-free premises, halal cuisine and prayer rooms."
+        },
+        {
+          "question": "How are the search results sorted?",
+          "answer": "Hotels are listed with the most recently added ones first. When you search, only hotels whose name or city matches your query are shown."
+        },
+        {
+          "question": "Do I book directly from this page?",
+          "answer": "This page is for comparing hotels. Click the hotel you like, choose a room on its detail page and then create your reservation request; our team will contact you shortly."
+        }
+      ]
+    }
   },
   "hotelCard": {
     "reviews": "reviews",
@@ -70,15 +116,75 @@
     "roomCapacity": "guests",
     "roomPerNight": "/ night",
     "selectRoom": "Select This Room",
+    "roomSelected": "Selected ✓",
     "reviewsTitle": "Guest Reviews",
     "noReviews": "No reviews yet for this hotel.",
     "startingFrom": "Starting from / night",
-    "bookNow": "Book Now"
+    "request": {
+      "title": "Reservation Request",
+      "subtitle": "Leave your details and our team will get back to you shortly.",
+      "selectedRoom": "Selected room",
+      "noRoomSelected": "No room selected (general request)",
+      "roomsNeededNote": "{count} rooms needed ({guests} guests)",
+      "totalPerNight": "Total / night",
+      "firstNameLabel": "First Name",
+      "lastNameLabel": "Last Name",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email (optional)",
+      "checkInLabel": "Check-in date",
+      "checkOutLabel": "Check-out date",
+      "adultsLabel": "Adults",
+      "childrenLabel": "Children",
+      "messageLabel": "Message / Note (optional)",
+      "messagePlaceholder": "Let us know any special requests",
+      "submit": "Send Request",
+      "submitPending": "Sending...",
+      "successTitle": "Request received!",
+      "successBody": "We'll get in touch with you as soon as possible.",
+      "sendAnother": "Send another request",
+      "errors": {
+        "requiredFields": "Full name and phone are required.",
+        "invalidEmail": "Enter a valid email address.",
+        "invalidGuests": "Guests must be between 1 and 30.",
+        "invalidDateRange": "Check-out date must be after check-in date.",
+        "dbError": "Could not save your request. Please try again later."
+      }
+    }
   },
   "destinations": {
     "title": "Popular Destinations",
     "subtitle": "Discover Turkey's most popular vacation destinations.",
-    "hotelsSuffix": "hotels"
+    "hotelsSuffix": "hotels",
+    "pageTitle": "Turkey's Most Popular Vacation Destinations",
+    "pageIntro": "From the turquoise coves of Antalya to the fairy chimneys of Cappadocia, from the lively shores of Bodrum to the historic fabric of Istanbul, explore Turkey's most popular vacation destinations. Click a destination to compare its hotels on a single page.",
+    "aboutTitle": "Which destination is right for you?",
+    "aboutBody": [
+      "If you're after sea, sand and sun, Antalya, Bodrum, Fethiye and Marmaris stand out with their lively shores and Blue Flag beaches. You'll find plenty of calm bays and all-inclusive resorts for families, and boutique concept hotels for couples, in these regions.",
+      "If you're planning a culture or nature trip, the unique landscapes and balloon tours of Cappadocia and the historic peninsula and Bosphorus-view hotels of Istanbul offer an unforgettable experience. For a thermal getaway, hotels around Afyon and Pamukkale are a great choice.",
+      "Whichever destination you choose, on OtelKirala you can compare thousands of options — including halal-friendly properties — by price and real guest ratings, and plan your vacation with confidence."
+    ],
+    "faq": {
+      "title": "Frequently asked questions about destinations",
+      "subtitle": "What you need to know about vacation destinations and choosing a hotel.",
+      "items": [
+        {
+          "question": "What are the most popular vacation destinations in Turkey?",
+          "answer": "Antalya, Bodrum, Fethiye, Marmaris, Cappadocia and Istanbul are the most popular destinations. The Aegean and Mediterranean coasts are ideal for a beach holiday, while Cappadocia and Istanbul stand out for culture and nature."
+        },
+        {
+          "question": "What happens when I click a destination?",
+          "answer": "When you click a destination, you're taken to the hotel search page listing the hotels in that region, where you can compare them by price, rating and features."
+        },
+        {
+          "question": "Which destinations have halal-friendly hotels?",
+          "answer": "Halal-friendly hotels can be found in many regions, especially Antalya, Alanya and Sapanca. Check the 'Halal Concept Features' section on the hotel pages for amenities such as separate pools/beaches, alcohol-free premises and prayer rooms."
+        },
+        {
+          "question": "When is the best time to travel?",
+          "answer": "June to September is ideal for a beach holiday. Destinations like Cappadocia and Istanbul are more affordable and enjoyable in spring and autumn. You can catch better prices with early-booking deals."
+        }
+      ]
+    }
   },
   "whyUs": {
     "title": "Why OtelKirala?",
@@ -113,16 +219,40 @@
   "auth": {
     "login": {
       "title": "Log In",
+      "metaTitle": "Sign In to OtelKirala – Manage Your Reservations",
       "subtitle": "Sign in to your account to manage your reservations.",
       "emailLabel": "Email",
       "passwordLabel": "Password",
       "submit": "Log In",
       "submitPending": "Logging in...",
       "noAccount": "Don't have an account?",
-      "registerLink": "Sign Up"
+      "registerLink": "Sign Up",
+      "faq": {
+        "title": "Frequently Asked Questions About Signing In",
+        "subtitle": "Common questions about accessing your account.",
+        "items": [
+          {
+            "question": "How do I sign in to my account?",
+            "answer": "Just enter the email address and password you used when registering, then click Sign In. Once signed in, you can manage your reservation requests and account details in one place."
+          },
+          {
+            "question": "I forgot my password—what can I do?",
+            "answer": "To reset your password, contact our support team at destek@otelkirala.com. Email us from your registered address and we'll help you regain access as soon as possible."
+          },
+          {
+            "question": "I don't have an account yet—how do I create one?",
+            "answer": "Click the Sign Up link below the login form to create a free account in a few minutes. All you need is your name, email, and a password."
+          },
+          {
+            "question": "Do I have to sign in?",
+            "answer": "You can browse hotels and prices without signing in. However, signing in is recommended so you can track your reservation requests and keep your details saved."
+          }
+        ]
+      }
     },
     "register": {
       "title": "Create Account",
+      "metaTitle": "Create Your Free OtelKirala Account – Sign Up Today",
       "subtitle": "Create a free account to manage your reservations in one place.",
       "nameLabel": "Full Name",
       "emailLabel": "Email",
@@ -131,7 +261,29 @@
       "submit": "Sign Up",
       "submitPending": "Creating account...",
       "hasAccount": "Already have an account?",
-      "loginLink": "Log In"
+      "loginLink": "Log In",
+      "faq": {
+        "title": "Frequently Asked Questions About Membership",
+        "subtitle": "Common questions before creating an account.",
+        "items": [
+          {
+            "question": "Is membership free?",
+            "answer": "Yes. Creating an account on OtelKirala is completely free—there are no membership or subscription fees."
+          },
+          {
+            "question": "What information do I need to create an account?",
+            "answer": "Just your name, a valid email address, and a password of at least 6 characters. Registration takes only a few minutes."
+          },
+          {
+            "question": "What are the benefits of creating an account?",
+            "answer": "With an account you can track your reservation requests in one place, keep your contact details saved, and create future reservations much faster."
+          },
+          {
+            "question": "Is my personal information safe?",
+            "answer": "Your information is used only for your reservations and account activities. Your password is stored securely and never shared with third parties."
+          }
+        ]
+      }
     },
     "errors": {
       "requiredFields": "Please fill in all fields.",
@@ -145,6 +297,7 @@
   },
   "contactPage": {
     "title": "Get in Touch",
+    "metaTitle": "Contact OtelKirala – Get in Touch with Our Team",
     "subtitle": "Have a question? Our team is happy to help.",
     "infoTitle": "Contact Information",
     "emailLabel": "Email",
@@ -161,6 +314,32 @@
       "messageLabel": "Your Message",
       "messagePlaceholder": "How can we help you?",
       "submit": "Send"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "The most common questions about getting in touch.",
+      "items": [
+        {
+          "question": "How can I reach your customer support team?",
+          "answer": "You can email us at destek@otelkirala.com, call our support line at 0850 000 00 00, or fill out the contact form on this page. Messages sent through the form go straight to our support team."
+        },
+        {
+          "question": "How quickly will I get a reply?",
+          "answer": "We usually respond to requests sent via the contact form or email within 24 hours, and often within a few hours during weekday business hours."
+        },
+        {
+          "question": "What are your phone support hours?",
+          "answer": "Our phone support line is open on weekdays from 09:00 to 18:00. We receive email and contact-form requests every day and reply by the next business day at the latest."
+        },
+        {
+          "question": "Who should I contact about an issue with my reservation?",
+          "answer": "For questions about an existing reservation request, reach us by email or phone. Sharing your reservation details helps our team resolve your request faster."
+        },
+        {
+          "question": "How do I get in touch about partnerships or corporate requests?",
+          "answer": "For hotel partnerships, corporate agreements, and collaboration proposals, write to destek@otelkirala.com and the relevant team will review your request as soon as possible."
+        }
+      ]
     }
   },
   "newsletter": {
@@ -168,6 +347,36 @@
     "subtitle": "Sign up for our newsletter and never miss exclusive discounts and last-minute deals.",
     "placeholder": "Your email address",
     "submit": "Subscribe"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you want to know about booking, cancellation and the halal concept.",
+    "items": [
+      {
+        "question": "What is OtelKirala and how does it work?",
+        "answer": "OtelKirala is a hotel platform that lets you compare hotels across Turkey in one place and book them at the best prices. You can browse thousands of hotels in Antalya, Bodrum, Fethiye, Cappadocia and many other destinations by price, location and real guest ratings, and find the option that suits you best in just minutes."
+      },
+      {
+        "question": "How do I book a hotel?",
+        "answer": "Choose your destination, your check-in and check-out dates and the number of guests, and we'll instantly list the hotels that match. Pick a room on the hotel's page and create your reservation request in just a few minutes. Our team will contact you shortly to confirm your request and finalize the details."
+      },
+      {
+        "question": "What does a halal-friendly hotel mean?",
+        "answer": "Halal-friendly hotels offer amenities such as separate pools and beaches for women and men, alcohol-free premises, halal-certified cuisine, prayer rooms and separate spas. On OtelKirala you can filter these features to easily find properties that respect your privacy and faith-based needs."
+      },
+      {
+        "question": "Can I cancel my reservation for free?",
+        "answer": "At most hotels you can cancel for free up to 24 hours before check-in. Because cancellation terms vary by hotel and room type, we recommend checking the relevant hotel's cancellation policy before you book."
+      },
+      {
+        "question": "How does the best price guarantee work?",
+        "answer": "If you find the hotel you booked cheaper elsewhere for the same dates and conditions, we'll refund the difference. That way you can plan your vacation confident that you've always found the best price."
+      },
+      {
+        "question": "Are my payment and personal details safe?",
+        "answer": "All your payment and personal details are protected with 256-bit SSL encryption and are never shared with third parties without permission. Our Turkish and English support team is available 24/7 at every step of your booking."
+      }
+    ]
   },
   "footer": {
     "tagline": "Plan the vacation of your dreams with Turkey's widest hotel network.",
@@ -200,7 +409,8 @@
       "dashboard": "Dashboard",
       "hotels": "Hotels",
       "destinations": "Destinations",
-      "testimonials": "Reviews"
+      "testimonials": "Reviews",
+      "requests": "Requests"
     },
     "login": {
       "metaTitle": "Admin Login | OtelKirala",
@@ -225,7 +435,8 @@
       "cards": {
         "hotels": "Hotels",
         "destinations": "Destinations",
-        "testimonials": "Reviews"
+        "testimonials": "Reviews",
+        "requests": "Requests"
       },
       "empty": {
         "title": "Database is empty",
@@ -347,6 +558,38 @@
       "validation": {
         "required": "Name, city, avatar URL and review text are required.",
         "rating": "Rating must be between 1 and 5."
+      }
+    },
+    "requests": {
+      "list": {
+        "title": "Reservation Requests",
+        "subtitle": "Requests submitted by users from the hotel detail page.",
+        "empty": "No requests yet.",
+        "deleteConfirm": "Delete the request from \"{name}\"?"
+      },
+      "status": {
+        "new": "New",
+        "contacted": "Contacted",
+        "closed": "Closed"
+      },
+      "statusLabel": "Status",
+      "updateStatus": "Update",
+      "fields": {
+        "hotel": "Hotel",
+        "room": "Room",
+        "generalRequest": "General request (no room selected)",
+        "phone": "Phone",
+        "email": "Email",
+        "guests": "Guests",
+        "adults": "adults",
+        "children": "children",
+        "dates": "Dates",
+        "roomCount": "Room count",
+        "totalPrice": "Total (per night)",
+        "message": "Note",
+        "noEmail": "—",
+        "noDates": "Not specified",
+        "noMessage": "—"
       }
     }
   }

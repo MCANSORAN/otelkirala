@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, getDictionary } from "@/messages/dictionaries";
+import {
+  localeAlternates,
+  contactPageJsonLd,
+  organizationJsonLd,
+  faqJsonLd,
+} from "@/utils/seo";
 import { getCurrentUser } from "@/services/customerAuth.service";
+import JsonLd from "@/components/JsonLd";
 import Header from "@/features/home/components/Header";
 import Footer from "@/features/home/components/Footer";
 import ContactSection from "@/features/contact/components/ContactSection";
+import Faq from "@/features/home/components/Faq";
 
 export async function generateMetadata({
   params,
@@ -14,7 +22,10 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang);
-  return { title: `${dict.contactPage.title} | OtelKirala` };
+  return {
+    title: dict.contactPage.metaTitle,
+    alternates: localeAlternates(lang, "/contact"),
+  };
 }
 
 export default async function ContactPage({
@@ -28,11 +39,22 @@ export default async function ContactPage({
   const dict = getDictionary(lang);
   const user = await getCurrentUser();
 
+  const structuredData = [
+    contactPageJsonLd(lang, {
+      title: dict.contactPage.title,
+      description: dict.contactPage.subtitle,
+    }),
+    organizationJsonLd(lang),
+    faqJsonLd(dict.contactPage.faq.items),
+  ];
+
   return (
     <>
+      <JsonLd data={structuredData} />
       <Header lang={lang} dict={dict.header} user={user} />
       <main>
         <ContactSection dict={dict.contactPage} />
+        <Faq dict={dict.contactPage.faq} />
       </main>
       <Footer dict={dict.footer} lang={lang} />
     </>

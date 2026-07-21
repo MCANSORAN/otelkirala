@@ -31,7 +31,7 @@ export default async function AdminTestimonialsPage({
         </div>
         <Link
           href="/admin/testimonials/new"
-          className="rounded-full bg-gold-500 px-5 py-2 text-sm font-semibold text-brand-950 hover:bg-gold-600"
+          className="rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white hover:bg-brand-700"
         >
           {dict.add}
         </Link>
@@ -64,7 +64,7 @@ export default async function AdminTestimonialsPage({
               <p className="mt-3 flex-1 text-sm text-neutral-600 dark:text-neutral-400">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <p className="mt-2 text-gold-500">{"★".repeat(t.rating)}</p>
+              <p className="mt-2 text-amber-400">{"★".repeat(t.rating)}</p>
               <div className="mt-3 flex gap-3">
                 <Link
                   href={`/admin/testimonials/${t.id}`}

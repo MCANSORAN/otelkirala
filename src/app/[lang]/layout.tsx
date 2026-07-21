@@ -20,6 +20,18 @@ export async function generateMetadata({
   return {
     title: dict.meta.title,
     description: dict.meta.description,
+    openGraph: {
+      type: "website",
+      siteName: "OtelKirala",
+      title: dict.meta.title,
+      description: dict.meta.description,
+      locale: lang === "tr" ? "tr_TR" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.title,
+      description: dict.meta.description,
+    },
   };
 }
 

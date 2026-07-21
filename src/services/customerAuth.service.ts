@@ -9,7 +9,7 @@ import type { User } from "@/types";
 // (bkz. messages/tr.json ve en.json içindeki auth.errors) — çağıran taraf (features/auth/actions.ts)
 // lang'e göre çevirir. Diğer servislerin aksine burada doğrudan Türkçe metin döndürülmez, çünkü
 // bu servis public/i18n'li giriş-kayıt sayfalarında kullanılır.
-export type AuthErrorCode =
+type AuthErrorCode =
   | "requiredFields"
   | "invalidEmail"
   | "passwordTooShort"

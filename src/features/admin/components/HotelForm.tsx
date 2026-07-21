@@ -104,7 +104,7 @@ export default function HotelForm({
                 name="halalFeatures"
                 value={key}
                 defaultChecked={hotel?.halalFeatures?.includes(key)}
-                className="h-4 w-4 rounded border-black/20 text-gold-600 focus:ring-gold-500 dark:border-white/20"
+                className="h-4 w-4 rounded border-black/20 text-brand-600 focus:ring-brand-500 dark:border-white/20"
               />
               {trDictionary.hotelDetail.halalFeatures[key]}
             </label>
@@ -116,7 +116,7 @@ export default function HotelForm({
 
       <button
         type="submit"
-        className="rounded-full bg-gold-500 px-5 py-2 text-sm font-semibold text-brand-950 hover:bg-gold-600"
+        className="rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white hover:bg-brand-700"
       >
         {hotel ? t.save : t.create}
       </button>

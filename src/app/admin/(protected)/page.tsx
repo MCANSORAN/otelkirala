@@ -2,22 +2,24 @@ import Link from "next/link";
 import { countHotels } from "@/repositories/hotel.repository";
 import { countDestinations } from "@/repositories/destination.repository";
 import { countTestimonials } from "@/repositories/testimonial.repository";
+import { countRequests } from "@/repositories/request.repository";
 import { seedAction } from "@/features/admin/actions";
 import ErrorBanner from "@/components/ErrorBanner";
 import trDictionary from "@/messages/tr.json";
 
 const t = trDictionary.admin;
 
-type Counts = { hotels: number; destinations: number; testimonials: number };
+type Counts = { hotels: number; destinations: number; testimonials: number; requests: number };
 
 async function getCounts(): Promise<Counts | null> {
   try {
-    const [hotels, destinations, testimonials] = await Promise.all([
+    const [hotels, destinations, testimonials, requests] = await Promise.all([
       countHotels(),
       countDestinations(),
       countTestimonials(),
+      countRequests(),
     ]);
-    return { hotels, destinations, testimonials };
+    return { hotels, destinations, testimonials, requests };
   } catch {
     return null;
   }
@@ -53,10 +55,11 @@ export default async function AdminDashboardPage({
         </div>
       ) : (
         <>
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <StatCard label={t.dashboard.cards.hotels} value={counts.hotels} href="/admin/hotels" />
             <StatCard label={t.dashboard.cards.destinations} value={counts.destinations} href="/admin/destinations" />
             <StatCard label={t.dashboard.cards.testimonials} value={counts.testimonials} href="/admin/testimonials" />
+            <StatCard label={t.dashboard.cards.requests} value={counts.requests} href="/admin/requests" />
           </div>
 
           {counts.hotels === 0 && counts.destinations === 0 && counts.testimonials === 0 && (
@@ -66,7 +69,7 @@ export default async function AdminDashboardPage({
               <form action={seedAction} className="mt-4">
                 <button
                   type="submit"
-                  className="rounded-full bg-gold-500 px-5 py-2 text-sm font-semibold text-brand-950 hover:bg-gold-600"
+                  className="rounded-full bg-brand-600 px-5 py-2 text-sm font-semibold text-white hover:bg-brand-700"
                 >
                   {t.dashboard.empty.seedButton}
                 </button>

@@ -48,7 +48,7 @@ export default function RegisterForm({
       <button
         type="submit"
         disabled={pending}
-        className="w-full rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-brand-950 shadow-sm transition-colors hover:bg-gold-600 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {pending ? dict.submitPending : dict.submit}
       </button>
