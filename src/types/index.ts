@@ -67,7 +67,10 @@ export type ReservationRequest = {
   email?: string;
   checkIn?: string; // "YYYY-MM-DD"
   checkOut?: string;
-  guests: number;
+  guests: number; // yetişkin sayısı
+  children: number; // çocuk sayısı
+  roomCount?: number; // kapasiteye göre gruplanmış gereken oda sayısı
+  totalPrice?: number; // gecelik toplam fiyat (oda fiyatı × oda sayısı)
   message?: string;
   status: ReservationStatus;
   createdAt: string; // ISO string

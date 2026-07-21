@@ -82,11 +82,27 @@ export default async function AdminRequestsPage({
               <dl className="mt-4 grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-4">
                 <Info label={dict.fields.phone} value={req.phone} />
                 <Info label={dict.fields.email} value={req.email ?? dict.fields.noEmail} />
-                <Info label={dict.fields.guests} value={String(req.guests)} />
+                <Info
+                  label={dict.fields.guests}
+                  value={
+                    req.children > 0
+                      ? `${req.guests} ${dict.fields.adults}, ${req.children} ${dict.fields.children}`
+                      : `${req.guests} ${dict.fields.adults}`
+                  }
+                />
                 <Info
                   label={dict.fields.dates}
                   value={req.checkIn && req.checkOut ? `${req.checkIn} → ${req.checkOut}` : dict.fields.noDates}
                 />
+                {req.roomCount && req.roomCount > 1 && (
+                  <Info label={dict.fields.roomCount} value={String(req.roomCount)} />
+                )}
+                {req.totalPrice && (
+                  <Info
+                    label={dict.fields.totalPrice}
+                    value={`₺${req.totalPrice.toLocaleString("tr-TR")}`}
+                  />
+                )}
               </dl>
 
               {req.message && (

@@ -4,6 +4,7 @@ import {
   deleteRequest,
 } from "@/repositories/request.repository";
 import { runDbAction } from "@/services/db-result";
+import { MESSAGE_MAX_LENGTH } from "@/constants/reservation";
 import type { ReservationRequest, ReservationStatus, ServiceResult } from "@/types";
 
 // Public (i18n'li) form doğrulama hataları KOD olarak döner; çağıran server action
@@ -17,6 +18,10 @@ export type RequestErrorCode =
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Ad/soyad alanlarından rakamları ayıklar (istemci de aynısını yapar, bkz.
+// ReservationForm stripDigits) — böylece isimlerde sayı tutulmaz.
+const stripDigits = (value: string) => value.replace(/[0-9]/g, "").trim();
+
 type ParsedRequest = Omit<ReservationRequest, "id" | "status" | "createdAt">;
 
 function parseRequestInput(formData: FormData): ParsedRequest | { error: RequestErrorCode } {
@@ -24,15 +29,27 @@ function parseRequestInput(formData: FormData): ParsedRequest | { error: Request
   const hotelName = String(formData.get("hotelName") ?? "").trim();
   const roomId = String(formData.get("roomId") ?? "").trim() || undefined;
   const roomName = String(formData.get("roomName") ?? "").trim() || undefined;
-  const fullName = String(formData.get("fullName") ?? "").trim();
+  const firstName = stripDigits(String(formData.get("firstName") ?? ""));
+  const lastName = stripDigits(String(formData.get("lastName") ?? ""));
+  const fullName = `${firstName} ${lastName}`.trim();
   const phone = String(formData.get("phone") ?? "").trim();
   const email = String(formData.get("email") ?? "").trim() || undefined;
   const checkIn = String(formData.get("checkIn") ?? "").trim() || undefined;
   const checkOut = String(formData.get("checkOut") ?? "").trim() || undefined;
-  const message = String(formData.get("message") ?? "").trim() || undefined;
+  // Not alanı en fazla MESSAGE_MAX_LENGTH karakter (istemcideki maxLength ile eş).
+  const message = String(formData.get("message") ?? "").trim().slice(0, MESSAGE_MAX_LENGTH) || undefined;
   const guests = Number(formData.get("guests"));
+  const childrenRaw = Number(formData.get("children"));
+  // Çocuk sayısı adım butonlarıyla girilir; yine de sunucuda [0, 10] aralığına sıkıştırılır.
+  const children = Number.isFinite(childrenRaw) ? Math.min(10, Math.max(0, Math.trunc(childrenRaw))) : 0;
+  // Kapasiteye göre gruplanmış oda sayısı ve gecelik toplam fiyat istemcide hesaplanır;
+  // burada makul aralığa sıkıştırılır (roomCount ≥ 1, totalPrice yalnızca pozitifse tutulur).
+  const roomCountRaw = Number(formData.get("roomCount"));
+  const roomCount = Number.isFinite(roomCountRaw) ? Math.min(30, Math.max(1, Math.trunc(roomCountRaw))) : 1;
+  const totalPriceRaw = Number(formData.get("totalPrice"));
+  const totalPrice = Number.isFinite(totalPriceRaw) && totalPriceRaw > 0 ? Math.trunc(totalPriceRaw) : undefined;
 
-  if (!hotelId || !fullName || !phone) {
+  if (!hotelId || !firstName || !lastName || !phone) {
     return { error: "requiredFields" };
   }
   if (email && !EMAIL_RE.test(email)) {
@@ -56,7 +73,10 @@ function parseRequestInput(formData: FormData): ParsedRequest | { error: Request
     checkIn,
     checkOut,
     guests,
+    children,
     message,
+    roomCount,
+    totalPrice,
   };
 }
 
