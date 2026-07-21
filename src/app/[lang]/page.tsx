@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, getDictionary } from "@/messages/dictionaries";
 import { localeAlternates, websiteJsonLd, organizationJsonLd, faqJsonLd } from "@/utils/seo";
-import { getCurrentUser } from "@/services/customerAuth.service";
 import { getDestinations } from "@/repositories/destination.repository";
 import { getTestimonials } from "@/repositories/testimonial.repository";
+import { getHotelCards } from "@/repositories/hotel.repository";
 import JsonLd from "@/components/JsonLd";
 import Header from "@/features/home/components/Header";
 import Hero from "@/features/home/components/Hero";
@@ -15,6 +15,10 @@ import Testimonials from "@/features/home/components/Testimonials";
 import Faq from "@/features/home/components/Faq";
 import Newsletter from "@/features/home/components/Newsletter";
 import Footer from "@/features/home/components/Footer";
+
+// ISR: sayfa statik üretilir, en fazla 5 dakikada bir (veya admin değişikliğinde
+// revalidateTag ile anında) tazelenir. Artık istekte cookie okumaz → dinamik değil.
+export const revalidate = 300;
 
 export async function generateMetadata({
   params,
@@ -35,9 +39,12 @@ export default async function Home({
   if (!hasLocale(lang)) notFound();
 
   const dict = getDictionary(lang);
-  const user = await getCurrentUser();
-  const destinations = await getDestinations();
-  const testimonials = await getTestimonials();
+  // Paralel: ardışık await'ler yerine tek turda. Veriler önbellekli (unstable_cache).
+  const [destinations, testimonials, hotels] = await Promise.all([
+    getDestinations(),
+    getTestimonials(),
+    getHotelCards(),
+  ]);
 
   const structuredData = [
     websiteJsonLd(lang, dict.meta.description),
@@ -48,7 +55,7 @@ export default async function Home({
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header lang={lang} dict={dict.header} user={user} />
+      <Header lang={lang} dict={dict.header} />
       <main>
         <Hero dict={dict.hero} lang={lang} />
         <PopularHotels
@@ -57,6 +64,7 @@ export default async function Home({
           lang={lang}
           limit={6}
           viewAll
+          hotels={hotels}
         />
         <Destinations dict={dict.destinations} lang={lang} destinations={destinations} />
         <WhyUs dict={dict.whyUs} />

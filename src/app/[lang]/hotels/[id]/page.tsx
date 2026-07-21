@@ -4,9 +4,8 @@ import { notFound } from "next/navigation";
 import { hasLocale, getDictionary } from "@/messages/dictionaries";
 import { localeAlternates, hotelJsonLd, breadcrumbJsonLd } from "@/utils/seo";
 import JsonLd from "@/components/JsonLd";
-import { getHotelById } from "@/repositories/hotel.repository";
+import { getHotelById, getHotelCards } from "@/repositories/hotel.repository";
 import { getTestimonialsByHotelId } from "@/repositories/testimonial.repository";
-import { getCurrentUser } from "@/services/customerAuth.service";
 import Header from "@/features/home/components/Header";
 import Footer from "@/features/home/components/Footer";
 import Gallery from "@/features/hotel-detail/components/Gallery";
@@ -15,6 +14,16 @@ import RoomsList from "@/features/hotel-detail/components/RoomsList";
 import HotelReviews from "@/features/hotel-detail/components/HotelReviews";
 import ReservationProvider from "@/features/hotel-detail/components/ReservationProvider";
 import ReservationForm from "@/features/hotel-detail/components/ReservationForm";
+
+// ISR: bilinen oteller build'de önceden üretilir; 5 dakikada bir (veya admin
+// değişikliğinde revalidateTag("hotels")/("testimonials") ile) tazelenir. Listede
+// olmayan id'ler (dynamicParams varsayılan true) ilk istekte üretilip önbelleğe alınır.
+export const revalidate = 300;
+
+export async function generateStaticParams() {
+  const hotels = await getHotelCards();
+  return hotels.map((hotel) => ({ id: hotel.id }));
+}
 
 export async function generateMetadata({
   params,
@@ -65,7 +74,6 @@ export default async function HotelDetailPage({
   const dict = getDictionary(lang);
   const reviews = await getTestimonialsByHotelId(id);
   const galleryImages = [hotel.image, ...hotel.images];
-  const user = await getCurrentUser();
 
   const amenities = hotel.halalFeatures.map((key) => dict.hotelDetail.halalFeatures[key]);
   const structuredData = [
@@ -80,7 +88,7 @@ export default async function HotelDetailPage({
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header lang={lang} dict={dict.header} user={user} />
+      <Header lang={lang} dict={dict.header} />
       <main className="mx-auto max-w-6xl px-6 py-10">
         <Link href={`/${lang}/hotels`} className="text-sm font-medium text-brand-700 hover:underline dark:text-brand-400">
           ← {dict.hotelDetail.backToList}

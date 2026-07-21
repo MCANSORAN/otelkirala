@@ -15,7 +15,18 @@ function connect(): Promise<MongoClient> {
       "MONGODB_URI ortam değişkeni tanımlı değil. .env.local dosyasına MongoDB bağlantı adresinizi ekleyin (bkz. .env.example)."
     );
   }
-  return new MongoClient(uri).connect();
+  // Zaman aşımı değerleri bilinçli olarak kısa: sunucu (Atlas) uykudaysa/erişilemezse
+  // sürücünün varsayılan 30 sn'lik "server selection" beklemesi, ardışık her sorguda
+  // tekrar yaşanır ve toplam yanıtı dakikalara çıkarır. Kısa timeout + paralel sorgu +
+  // önbellek ile en kötü durum birkaç saniyeye iner (bkz. repository'lerdeki seed fallback).
+  return new MongoClient(uri, {
+    maxPoolSize: 10,
+    minPoolSize: 0,
+    serverSelectionTimeoutMS: 8_000,
+    connectTimeoutMS: 10_000,
+    socketTimeoutMS: 45_000,
+    retryWrites: true,
+  }).connect();
 }
 
 function getClientPromise(): Promise<MongoClient> {

@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { getHotels } from "@/repositories/hotel.repository";
+import { getHotelCards } from "@/repositories/hotel.repository";
 import type { Dictionary } from "@/messages/dictionaries";
 import type { Locale } from "@/constants/locales";
+import type { Hotel } from "@/types";
 import HotelCard from "./HotelCard";
 
 export default async function PopularHotels({
@@ -10,14 +11,17 @@ export default async function PopularHotels({
   lang,
   limit,
   viewAll = false,
+  hotels: provided,
 }: {
   dict: { eyebrow?: string; title: string; subtitle: string; viewAll?: string };
   hotelCardDict: Dictionary["hotelCard"];
   lang: Locale;
   limit?: number;
   viewAll?: boolean;
+  // Sayfa verileri paralel çekip iletebilir (waterfall'ı önler); verilmezse kendi çeker.
+  hotels?: Hotel[];
 }) {
-  const all = await getHotels();
+  const all = provided ?? (await getHotelCards());
   const hotels = limit ? all.slice(0, limit) : all;
 
   return (

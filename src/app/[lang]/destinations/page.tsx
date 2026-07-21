@@ -7,7 +7,6 @@ import {
   destinationListJsonLd,
   faqJsonLd,
 } from "@/utils/seo";
-import { getCurrentUser } from "@/services/customerAuth.service";
 import { getDestinations } from "@/repositories/destination.repository";
 import JsonLd from "@/components/JsonLd";
 import ContentSection from "@/components/ContentSection";
@@ -15,6 +14,8 @@ import Header from "@/features/home/components/Header";
 import Destinations from "@/features/home/components/Destinations";
 import Faq from "@/features/home/components/Faq";
 import Footer from "@/features/home/components/Footer";
+
+export const revalidate = 300;
 
 export async function generateMetadata({
   params,
@@ -40,7 +41,6 @@ export default async function DestinationsPage({
   if (!hasLocale(lang)) notFound();
 
   const dict = getDictionary(lang);
-  const user = await getCurrentUser();
   const destinations = await getDestinations();
 
   const structuredData = [
@@ -55,7 +55,7 @@ export default async function DestinationsPage({
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header lang={lang} dict={dict.header} user={user} />
+      <Header lang={lang} dict={dict.header} />
       <main>
         <section className="mx-auto max-w-3xl px-6 pb-4 pt-16 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">

@@ -49,7 +49,7 @@ export default async function LoginPage({
   return (
     <>
       <JsonLd data={structuredData} />
-      <Header lang={lang} dict={dict.header} user={null} />
+      <Header lang={lang} dict={dict.header} />
       <main>
         <section className="mx-auto max-w-md px-6 py-20">
           <h1 className="text-2xl font-bold text-neutral-900 dark:text-white">{dict.auth.login.title}</h1>

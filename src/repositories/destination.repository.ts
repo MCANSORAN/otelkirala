@@ -1,4 +1,5 @@
 import { ObjectId, type Document, type WithId } from "mongodb";
+import { unstable_cache } from "next/cache";
 import { getDb } from "@/database/mongodb";
 import { seedDestinations } from "@/lib/seed-data";
 import type { Destination } from "@/types";
@@ -14,10 +15,17 @@ function toDestination(doc: WithId<Document>): Destination {
   };
 }
 
+// Genel sayfalar için bölgeleri Next veri önbelleğinde tutar (revalidate + "destinations"
+// etiketi); admin değişikliğinde revalidateTag("destinations") ile tazelenir.
+const getCachedDestinations = unstable_cache(getDestinationsOrThrow, ["public-destinations"], {
+  tags: ["destinations"],
+  revalidate: 300,
+});
+
 // Veritabanına bağlanılamazsa örnek verilere düşer; genel (public) sayfalarda kullanılır.
 export async function getDestinations(): Promise<Destination[]> {
   try {
-    return await getDestinationsOrThrow();
+    return await getCachedDestinations();
   } catch (error) {
     console.warn("[mongodb] Bölgeler alınamadı, örnek veriler gösteriliyor:", (error as Error).message);
     return seedDestinations;
