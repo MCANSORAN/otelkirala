@@ -20,11 +20,17 @@ export default function Destinations({
   showHeading?: boolean;
 }) {
   return (
-    <section className="bg-brand-50/60 py-20">
+    <section
+      aria-labelledby={showHeading ? "destinations-heading" : undefined}
+      className="bg-brand-50/60 py-20"
+    >
       <div className="mx-auto max-w-6xl px-6">
         {showHeading && (
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            <h2
+              id="destinations-heading"
+              className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+            >
               {dict.title}
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-slate-600">{dict.subtitle}</p>

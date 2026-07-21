@@ -27,7 +27,7 @@ export async function generateMetadata({
   const hotel = await getHotelById(id);
   if (!hotel) return {};
 
-  const title = `${hotel.name} | OtelKirala`;
+  const title = `${hotel.name}, ${hotel.location} | OtelKirala`;
   const description = hotel.description || undefined;
 
   return {

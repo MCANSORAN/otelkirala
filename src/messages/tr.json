@@ -22,7 +22,7 @@
     "titleBefore": "Hayalindeki tatile",
     "titleHighlight": "bir tık",
     "titleAfter": "uzağında",
-    "subtitle": "En uygun fiyatlarla otel karşılaştır, an rezervasyonunu tamamla, tatilin keyfine bak.",
+    "subtitle": "En uygun oteli bul, güvenle rezervasyon yap, tatilin keyfini çıkar.",
     "form": {
       "destinationLabel": "Nereye gidiyorsun?",
       "destinationPlaceholder": "Antalya, Bodrum, Kapadokya...",
@@ -54,6 +54,7 @@
   },
   "allHotels": {
     "title": "Tüm Oteller",
+    "metaTitle": "Tüm Oteller – Türkiye Genelinde En İyi Otel Fiyatları",
     "subtitle": "Türkiye'nin dört bir yanındaki otel seçeneklerimizin tamamını keşfedin.",
     "searchPlaceholder": "Otel adı veya şehir ara...",
     "searchAction": "Ara",
@@ -214,16 +215,40 @@
   "auth": {
     "login": {
       "title": "Giriş Yap",
+      "metaTitle": "OtelKirala'ya Giriş Yapın – Rezervasyonlarını Yönet",
       "subtitle": "Hesabına giriş yaparak rezervasyonlarını yönet.",
       "emailLabel": "E-posta",
       "passwordLabel": "Şifre",
       "submit": "Giriş Yap",
       "submitPending": "Giriş yapılıyor...",
       "noAccount": "Hesabın yok mu?",
-      "registerLink": "Kayıt Ol"
+      "registerLink": "Kayıt Ol",
+      "faq": {
+        "title": "Giriş Hakkında Sıkça Sorulan Sorular",
+        "subtitle": "Hesabına giriş yaparken en çok merak edilenler.",
+        "items": [
+          {
+            "question": "Hesabıma nasıl giriş yaparım?",
+            "answer": "Kayıt olurken kullandığın e-posta adresini ve şifreni girip Giriş Yap butonuna tıklaman yeterli. Giriş yaptıktan sonra rezervasyon taleplerini ve hesap bilgilerini tek yerden yönetebilirsin."
+          },
+          {
+            "question": "Şifremi unuttum, ne yapabilirim?",
+            "answer": "Şifreni yeniden belirlemek için destek ekibimize destek@otelkirala.com adresinden ulaşabilirsin. Hesabına kayıtlı e-posta ile bize yazdığında en kısa sürede yardımcı oluyoruz."
+          },
+          {
+            "question": "Henüz hesabım yok, nasıl oluşturabilirim?",
+            "answer": "Giriş formunun altındaki Kayıt Ol bağlantısına tıklayarak birkaç dakikada ücretsiz bir hesap oluşturabilirsin. Ad, e-posta ve bir şifre belirlemen yeterli."
+          },
+          {
+            "question": "Giriş yapmak zorunda mıyım?",
+            "answer": "Otelleri ve fiyatları giriş yapmadan da inceleyebilirsin. Ancak rezervasyon taleplerini takip etmek ve bilgilerini kayıtlı tutmak için giriş yapman önerilir."
+          }
+        ]
+      }
     },
     "register": {
       "title": "Hesap Oluştur",
+      "metaTitle": "Ücretsiz OtelKirala Hesabı Oluştur – Hemen Üye Ol",
       "subtitle": "Ücretsiz hesap oluştur, rezervasyonlarını tek yerden yönet.",
       "nameLabel": "Ad Soyad",
       "emailLabel": "E-posta",
@@ -232,7 +257,29 @@
       "submit": "Kayıt Ol",
       "submitPending": "Kayıt oluşturuluyor...",
       "hasAccount": "Zaten hesabın var mı?",
-      "loginLink": "Giriş Yap"
+      "loginLink": "Giriş Yap",
+      "faq": {
+        "title": "Üyelik Hakkında Sıkça Sorulan Sorular",
+        "subtitle": "Hesap oluşturmadan önce en çok merak edilenler.",
+        "items": [
+          {
+            "question": "Üyelik ücretli mi?",
+            "answer": "Hayır. OtelKirala'da hesap oluşturmak tamamen ücretsizdir; herhangi bir üyelik ya da abonelik ücreti alınmaz."
+          },
+          {
+            "question": "Hesap oluşturmak için hangi bilgiler gerekiyor?",
+            "answer": "Yalnızca adın, geçerli bir e-posta adresin ve en az 6 karakterli bir şifre yeterli. Kayıt işlemi yalnızca birkaç dakika sürer."
+          },
+          {
+            "question": "Hesap oluşturmanın avantajları neler?",
+            "answer": "Hesabınla rezervasyon taleplerini tek yerden takip edebilir, iletişim bilgilerini kayıtlı tutabilir ve sonraki rezervasyonlarını çok daha hızlı oluşturabilirsin."
+          },
+          {
+            "question": "Kişisel bilgilerim güvende mi?",
+            "answer": "Bilgilerin yalnızca rezervasyon ve hesap işlemlerin için kullanılır. Şifren güvenli biçimde saklanır ve üçüncü taraflarla paylaşılmaz."
+          }
+        ]
+      }
     },
     "errors": {
       "requiredFields": "Tüm alanları doldurun.",
@@ -246,6 +293,7 @@
   },
   "contactPage": {
     "title": "Bize Ulaşın",
+    "metaTitle": "OtelKirala İletişim – Bize Ulaşın ve Destek Alın",
     "subtitle": "Sorularınız mı var? Ekibimiz size yardımcı olmaktan mutluluk duyar.",
     "infoTitle": "İletişim Bilgileri",
     "emailLabel": "E-posta",
@@ -262,6 +310,32 @@
       "messageLabel": "Mesajınız",
       "messagePlaceholder": "Size nasıl yardımcı olabiliriz?",
       "submit": "Gönder"
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "subtitle": "İletişimle ilgili en çok merak edilenler.",
+      "items": [
+        {
+          "question": "Müşteri destek ekibinize nasıl ulaşabilirim?",
+          "answer": "destek@otelkirala.com adresine e-posta gönderebilir, 0850 000 00 00 numaralı destek hattımızı arayabilir ya da bu sayfadaki iletişim formunu doldurabilirsin. Formdan ilettiğin mesajlar doğrudan destek ekibimize ulaşır."
+        },
+        {
+          "question": "Mesajıma ne kadar sürede yanıt alırım?",
+          "answer": "İletişim formu veya e-posta ile gönderdiğin taleplere genellikle 24 saat içinde dönüş yapıyoruz; hafta içi mesai saatlerinde bu süre çoğunlukla birkaç saate iner."
+        },
+        {
+          "question": "Telefon destek hattınız hangi saatlerde açık?",
+          "answer": "Telefon destek hattımız hafta içi 09:00-18:00 saatleri arasında hizmet verir. E-posta ve iletişim formu taleplerini her gün alıyor, en geç ilk mesai gününde yanıtlıyoruz."
+        },
+        {
+          "question": "Rezervasyonumla ilgili bir sorunda kiminle görüşmeliyim?",
+          "answer": "Mevcut bir rezervasyon talebiyle ilgili sorularında bize e-posta ya da telefonla ulaşabilirsin. Rezervasyon bilgilerini paylaştığında ekibimiz talebini daha hızlı çözüme kavuşturur."
+        },
+        {
+          "question": "İş birliği ve kurumsal talepler için nasıl iletişime geçebilirim?",
+          "answer": "Otel ortaklığı, kurumsal anlaşmalar ve iş birliği önerilerin için destek@otelkirala.com adresine yazabilirsin; ilgili ekibimiz talebini en kısa sürede değerlendirir."
+        }
+      ]
     }
   },
   "newsletter": {

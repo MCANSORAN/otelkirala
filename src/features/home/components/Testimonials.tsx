@@ -1,14 +1,28 @@
 import Image from "next/image";
 import { getTestimonials } from "@/repositories/testimonial.repository";
 import type { Dictionary } from "@/messages/dictionaries";
+import type { Testimonial } from "@/types";
 
-export default async function Testimonials({ dict }: { dict: Dictionary["testimonials"] }) {
-  const testimonials = await getTestimonials();
+// `testimonials` verilmezse bileşen veriyi kendisi çeker (yorumlar sayfasında
+// böyle kullanılır). Ana sayfa veriyi sayfa düzeyinde çekip hem buraya hem de
+// yorum yapılandırılmış verisine (Review/AggregateRating) beslediğinden veriyi
+// prop olarak geçer ve çift veritabanı çağrısını önler.
+export default async function Testimonials({
+  dict,
+  testimonials: provided,
+}: {
+  dict: Dictionary["testimonials"];
+  testimonials?: Testimonial[];
+}) {
+  const testimonials = provided ?? (await getTestimonials());
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
+    <section aria-labelledby="testimonials-heading" className="mx-auto max-w-6xl px-6 py-20">
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        <h2
+          id="testimonials-heading"
+          className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+        >
           {dict.title}
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-slate-600">{dict.subtitle}</p>

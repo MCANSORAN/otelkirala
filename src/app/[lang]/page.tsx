@@ -4,6 +4,7 @@ import { hasLocale, getDictionary } from "@/messages/dictionaries";
 import { localeAlternates, websiteJsonLd, organizationJsonLd, faqJsonLd } from "@/utils/seo";
 import { getCurrentUser } from "@/services/customerAuth.service";
 import { getDestinations } from "@/repositories/destination.repository";
+import { getTestimonials } from "@/repositories/testimonial.repository";
 import JsonLd from "@/components/JsonLd";
 import Header from "@/features/home/components/Header";
 import Hero from "@/features/home/components/Hero";
@@ -36,10 +37,11 @@ export default async function Home({
   const dict = getDictionary(lang);
   const user = await getCurrentUser();
   const destinations = await getDestinations();
+  const testimonials = await getTestimonials();
 
   const structuredData = [
     websiteJsonLd(lang, dict.meta.description),
-    organizationJsonLd(lang),
+    organizationJsonLd(lang, testimonials),
     faqJsonLd(dict.faq.items),
   ];
 
@@ -58,7 +60,7 @@ export default async function Home({
         />
         <Destinations dict={dict.destinations} lang={lang} destinations={destinations} />
         <WhyUs dict={dict.whyUs} />
-        <Testimonials dict={dict.testimonials} />
+        <Testimonials dict={dict.testimonials} testimonials={testimonials} />
         <Faq dict={dict.faq} />
         <Newsletter dict={dict.newsletter} />
       </main>

@@ -54,6 +54,7 @@
   },
   "allHotels": {
     "title": "All Hotels",
+    "metaTitle": "All Hotels – Compare Hotel Prices Across Türkiye",
     "subtitle": "Explore our full range of hotels across Turkey.",
     "searchPlaceholder": "Search by hotel name or city...",
     "searchAction": "Search",
@@ -214,16 +215,40 @@
   "auth": {
     "login": {
       "title": "Log In",
+      "metaTitle": "Sign In to OtelKirala – Manage Your Reservations",
       "subtitle": "Sign in to your account to manage your reservations.",
       "emailLabel": "Email",
       "passwordLabel": "Password",
       "submit": "Log In",
       "submitPending": "Logging in...",
       "noAccount": "Don't have an account?",
-      "registerLink": "Sign Up"
+      "registerLink": "Sign Up",
+      "faq": {
+        "title": "Frequently Asked Questions About Signing In",
+        "subtitle": "Common questions about accessing your account.",
+        "items": [
+          {
+            "question": "How do I sign in to my account?",
+            "answer": "Just enter the email address and password you used when registering, then click Sign In. Once signed in, you can manage your reservation requests and account details in one place."
+          },
+          {
+            "question": "I forgot my password—what can I do?",
+            "answer": "To reset your password, contact our support team at destek@otelkirala.com. Email us from your registered address and we'll help you regain access as soon as possible."
+          },
+          {
+            "question": "I don't have an account yet—how do I create one?",
+            "answer": "Click the Sign Up link below the login form to create a free account in a few minutes. All you need is your name, email, and a password."
+          },
+          {
+            "question": "Do I have to sign in?",
+            "answer": "You can browse hotels and prices without signing in. However, signing in is recommended so you can track your reservation requests and keep your details saved."
+          }
+        ]
+      }
     },
     "register": {
       "title": "Create Account",
+      "metaTitle": "Create Your Free OtelKirala Account – Sign Up Today",
       "subtitle": "Create a free account to manage your reservations in one place.",
       "nameLabel": "Full Name",
       "emailLabel": "Email",
@@ -232,7 +257,29 @@
       "submit": "Sign Up",
       "submitPending": "Creating account...",
       "hasAccount": "Already have an account?",
-      "loginLink": "Log In"
+      "loginLink": "Log In",
+      "faq": {
+        "title": "Frequently Asked Questions About Membership",
+        "subtitle": "Common questions before creating an account.",
+        "items": [
+          {
+            "question": "Is membership free?",
+            "answer": "Yes. Creating an account on OtelKirala is completely free—there are no membership or subscription fees."
+          },
+          {
+            "question": "What information do I need to create an account?",
+            "answer": "Just your name, a valid email address, and a password of at least 6 characters. Registration takes only a few minutes."
+          },
+          {
+            "question": "What are the benefits of creating an account?",
+            "answer": "With an account you can track your reservation requests in one place, keep your contact details saved, and create future reservations much faster."
+          },
+          {
+            "question": "Is my personal information safe?",
+            "answer": "Your information is used only for your reservations and account activities. Your password is stored securely and never shared with third parties."
+          }
+        ]
+      }
     },
     "errors": {
       "requiredFields": "Please fill in all fields.",
@@ -246,6 +293,7 @@
   },
   "contactPage": {
     "title": "Get in Touch",
+    "metaTitle": "Contact OtelKirala – Get in Touch with Our Team",
     "subtitle": "Have a question? Our team is happy to help.",
     "infoTitle": "Contact Information",
     "emailLabel": "Email",
@@ -262,6 +310,32 @@
       "messageLabel": "Your Message",
       "messagePlaceholder": "How can we help you?",
       "submit": "Send"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "The most common questions about getting in touch.",
+      "items": [
+        {
+          "question": "How can I reach your customer support team?",
+          "answer": "You can email us at destek@otelkirala.com, call our support line at 0850 000 00 00, or fill out the contact form on this page. Messages sent through the form go straight to our support team."
+        },
+        {
+          "question": "How quickly will I get a reply?",
+          "answer": "We usually respond to requests sent via the contact form or email within 24 hours, and often within a few hours during weekday business hours."
+        },
+        {
+          "question": "What are your phone support hours?",
+          "answer": "Our phone support line is open on weekdays from 09:00 to 18:00. We receive email and contact-form requests every day and reply by the next business day at the latest."
+        },
+        {
+          "question": "Who should I contact about an issue with my reservation?",
+          "answer": "For questions about an existing reservation request, reach us by email or phone. Sharing your reservation details helps our team resolve your request faster."
+        },
+        {
+          "question": "How do I get in touch about partnerships or corporate requests?",
+          "answer": "For hotel partnerships, corporate agreements, and collaboration proposals, write to destek@otelkirala.com and the relevant team will review your request as soon as possible."
+        }
+      ]
     }
   },
   "newsletter": {

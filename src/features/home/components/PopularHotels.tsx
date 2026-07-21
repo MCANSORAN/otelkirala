@@ -21,7 +21,7 @@ export default async function PopularHotels({
   const hotels = limit ? all.slice(0, limit) : all;
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-20">
+    <section aria-labelledby="popular-hotels-heading" className="mx-auto max-w-6xl px-6 py-20">
       <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
         <div>
           {dict.eyebrow && (
@@ -29,7 +29,10 @@ export default async function PopularHotels({
               ★ {dict.eyebrow}
             </span>
           )}
-          <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2
+            id="popular-hotels-heading"
+            className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+          >
             {dict.title}
           </h2>
           <p className="mt-2 max-w-xl text-slate-600">{dict.subtitle}</p>

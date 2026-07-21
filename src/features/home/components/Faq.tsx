@@ -13,9 +13,12 @@ type FaqContent = {
 // FAQPage yapılandırılmış verisi olarak da yayınlanır.
 export default function Faq({ dict }: { dict: FaqContent }) {
   return (
-    <section className="mx-auto max-w-3xl px-6 py-20">
+    <section aria-labelledby="faq-heading" className="mx-auto max-w-3xl px-6 py-20">
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        <h2
+          id="faq-heading"
+          className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl"
+        >
           {dict.title}
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-slate-600">{dict.subtitle}</p>

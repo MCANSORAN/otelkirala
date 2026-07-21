@@ -5,7 +5,7 @@ import HotelSearchForm from "./HotelSearchForm";
 
 export default function Hero({ dict, lang }: { dict: Dictionary["hero"]; lang: Locale }) {
   return (
-    <section className="relative">
+    <section aria-labelledby="hero-heading" className="relative">
       <div className="absolute inset-0 -z-10 overflow-hidden bg-brand-950">
         <Image
           src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&auto=format&fit=crop"
@@ -25,7 +25,10 @@ export default function Hero({ dict, lang }: { dict: Dictionary["hero"]; lang: L
           <span className="h-2 w-2 rounded-full bg-gold-400" />
           {dict.badge}
         </span>
-        <h1 className="mt-6 max-w-3xl text-4xl font-extrabold tracking-tight drop-shadow-sm sm:text-5xl md:text-6xl">
+        <h1
+          id="hero-heading"
+          className="mt-6 max-w-3xl text-4xl font-extrabold tracking-tight drop-shadow-sm sm:text-5xl md:text-6xl"
+        >
           {dict.titleBefore}{" "}
           <span className="bg-gradient-to-r from-gold-300 to-gold-400 bg-clip-text text-transparent">
             {dict.titleHighlight}

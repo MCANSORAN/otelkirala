@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { locales, defaultLocale, type Locale } from "@/constants/locales";
-import type { Hotel, Destination } from "@/types";
+import type { Hotel, Destination, Testimonial } from "@/types";
 
 // Yapılandırılmış veride (JSON-LD) kullanılan mutlak URL ve marka sabitleri.
 // Root layout'taki metadataBase ile aynı ortam değişkenini kullanır.
@@ -57,9 +57,12 @@ export function websiteJsonLd(lang: Locale, description: string) {
 }
 
 // Markayı tanımlayan Organization şeması: arama motorları ve LLM'lerin
-// işletmeyi, iletişim bilgilerini ve logoyu tanımasını sağlar.
-export function organizationJsonLd(lang: Locale) {
-  return {
+// işletmeyi, iletişim bilgilerini ve logoyu tanımasını sağlar. Misafir
+// yorumları verildiğinde aynı düğüme aggregateRating (ortalama puan) ve
+// review (tek tek yorumlar) alanları eklenir; böylece yorumlar ayrı bir
+// Organization düğümü oluşturmak yerine markayla ilişkilendirilir.
+export function organizationJsonLd(lang: Locale, testimonials: Testimonial[] = []) {
+  const data: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: SITE_NAME,
@@ -74,6 +77,33 @@ export function organizationJsonLd(lang: Locale) {
       availableLanguage: ["Turkish", "English"],
     },
   };
+
+  // Yalnızca geçerli (0'dan büyük) puanlı yorumları dahil et; 0 puanlı bir
+  // kayıt ortalamayı bozar ve reviewRating aralığının dışına düşer.
+  const rated = testimonials.filter((t) => t.rating > 0);
+  if (rated.length) {
+    const average = rated.reduce((sum, t) => sum + t.rating, 0) / rated.length;
+    data.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: Math.round(average * 10) / 10,
+      reviewCount: rated.length,
+      bestRating: 5,
+      worstRating: 1,
+    };
+    data.review = rated.map((t) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: t.name },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: t.rating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      reviewBody: t.quote,
+    }));
+  }
+
+  return data;
 }
 
 // Otel detay sayfası için Hotel (LodgingBusiness) şeması: ad, açıklama,
@@ -169,6 +199,52 @@ export function destinationListJsonLd(destinations: Destination[], lang: Locale)
       name: destination.name,
       url: `${SITE_URL}/${lang}/hotels?q=${encodeURIComponent(destination.name)}`,
     })),
+  };
+}
+
+// Genel amaçlı WebPage şeması: bir sayfanın türünü, başlığını, açıklamasını ve
+// ait olduğu web sitesini tanımlar. FAQPage/ContactPage gibi özel bir tür
+// gerektirmeyen sayfalarda (ör. giriş, kayıt) sayfayı arama motorları ve
+// LLM'ler için bağlama oturtur.
+export function webPageJsonLd(
+  lang: Locale,
+  { title, description, path }: { title: string; description: string; path: string }
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description,
+    url: `${SITE_URL}/${lang}${path}`,
+    inLanguage: localeTag(lang),
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: `${SITE_URL}/${lang}`,
+    },
+  };
+}
+
+// İletişim sayfası için ContactPage şeması: sayfanın türünü (iletişim sayfası),
+// başlığını, açıklamasını ve ait olduğu web sitesini tanımlar. İletişim
+// kanalları (e-posta, telefon) Organization şemasındaki contactPoint alanında
+// yer aldığından bu sayfada iki şema birlikte yayınlanır.
+export function contactPageJsonLd(
+  lang: Locale,
+  { title, description }: { title: string; description: string }
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: title,
+    description,
+    url: `${SITE_URL}/${lang}/contact`,
+    inLanguage: localeTag(lang),
+    isPartOf: {
+      "@type": "WebSite",
+      name: SITE_NAME,
+      url: `${SITE_URL}/${lang}`,
+    },
   };
 }
 

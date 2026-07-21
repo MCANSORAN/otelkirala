@@ -23,7 +23,7 @@ export async function generateMetadata({
   if (!hasLocale(lang)) return {};
   const dict = getDictionary(lang);
   return {
-    title: `${dict.allHotels.title} | OtelKirala`,
+    title: dict.allHotels.metaTitle,
     alternates: localeAlternates(lang, "/hotels"),
   };
 }
