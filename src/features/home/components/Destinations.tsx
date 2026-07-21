@@ -1,33 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getDestinations } from "@/repositories/destination.repository";
 import type { Dictionary } from "@/messages/dictionaries";
 import type { Locale } from "@/constants/locales";
+import type { Destination } from "@/types";
 
-export default async function Destinations({
+// Bölge kartları ızgarası. Veriyi çağıran sayfa yükler (böylece aynı liste
+// yapılandırılmış veride de kullanılabilir). `showHeading=false` verildiğinde
+// başlık gizlenir; adanmış Bölgeler sayfası kendi <h1> başlığını sağladığından
+// başlık tekrarını önler.
+export default function Destinations({
   dict,
   lang,
+  destinations,
+  showHeading = true,
 }: {
   dict: Dictionary["destinations"];
   lang: Locale;
+  destinations: Destination[];
+  showHeading?: boolean;
 }) {
-  const destinations = await getDestinations();
-
   return (
     <section className="bg-brand-50/60 py-20">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            {dict.title}
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-slate-600">{dict.subtitle}</p>
-        </div>
+        {showHeading && (
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              {dict.title}
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-slate-600">{dict.subtitle}</p>
+          </div>
+        )}
 
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div
+          className={`grid grid-cols-2 gap-4 sm:grid-cols-4${showHeading ? " mt-12" : ""}`}
+        >
           {destinations.map((dest) => (
             <Link
               key={dest.id}
-              href={`/${lang}/hotels`}
+              href={`/${lang}/hotels?q=${encodeURIComponent(dest.name)}`}
               className="group relative block h-60 overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5"
             >
               <Image

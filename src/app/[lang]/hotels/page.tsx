@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, getDictionary } from "@/messages/dictionaries";
-import { localeAlternates } from "@/utils/seo";
+import { localeAlternates, breadcrumbJsonLd, itemListJsonLd, faqJsonLd } from "@/utils/seo";
 import { getCurrentUser } from "@/services/customerAuth.service";
 import { getHotels } from "@/repositories/hotel.repository";
 import { searchHotels } from "@/features/hotels/searchHotels";
+import JsonLd from "@/components/JsonLd";
+import ContentSection from "@/components/ContentSection";
 import Header from "@/features/home/components/Header";
 import HotelSearchSection from "@/features/hotels/components/HotelSearchSection";
+import Faq from "@/features/home/components/Faq";
 import Footer from "@/features/home/components/Footer";
 
 const PRESERVED_KEYS = ["checkin", "checkout", "adults", "children"] as const;
@@ -49,8 +52,18 @@ export default async function HotelsPage({
   const allHotels = await getHotels();
   const hotels = searchHotels(allHotels, query);
 
+  const structuredData = [
+    breadcrumbJsonLd([
+      { name: "OtelKirala", path: `/${lang}` },
+      { name: dict.allHotels.title, path: `/${lang}/hotels` },
+    ]),
+    itemListJsonLd(hotels, lang),
+    faqJsonLd(dict.allHotels.faq.items),
+  ];
+
   return (
     <>
+      <JsonLd data={structuredData} />
       <Header lang={lang} dict={dict.header} user={user} />
       <main>
         <HotelSearchSection
@@ -61,6 +74,11 @@ export default async function HotelsPage({
           hotelCardDict={dict.hotelCard}
           lang={lang}
         />
+        <ContentSection
+          title={dict.allHotels.aboutTitle}
+          paragraphs={dict.allHotels.aboutBody}
+        />
+        <Faq dict={dict.allHotels.faq} />
       </main>
       <Footer dict={dict.footer} lang={lang} />
     </>

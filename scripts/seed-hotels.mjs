@@ -69,7 +69,7 @@ const img = (w) => `https://images.unsplash.com/photo-${pick(PHOTO_IDS)}?w=${w}&
 const LOCATIONS = [
   "Antalya", "Alanya, Antalya", "Side, Antalya", "Belek, Antalya", "Kaş, Antalya",
   "Bodrum, Muğla", "Fethiye, Muğla", "Marmaris, Muğla", "Datça, Muğla", "Göcek, Muğla",
-  "İstanbul", "Nevşehir", "Ürgüp, Nevşehir", "Kuşadası, Aydın", "Didim, Aydın",
+  "İstanbul", "Kapadokya", "Ürgüp, Kapadokya", "Kuşadası, Aydın", "Didim, Aydın",
   "Çeşme, İzmir", "Alaçatı, İzmir", "Sapanca, Sakarya", "Uludağ, Bursa", "Abant, Bolu",
   "Trabzon", "Ordu", "Amasra, Bartın", "Şanlıurfa", "Gaziantep", "Afyonkarahisar",
   "Pamukkale, Denizli", "Kemer, Antalya", "Sarıgerme, Muğla", "İçmeler, Muğla",

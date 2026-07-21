@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { locales, defaultLocale, type Locale } from "@/constants/locales";
-import type { Hotel } from "@/types";
+import type { Hotel, Destination } from "@/types";
 
 // Yapılandırılmış veride (JSON-LD) kullanılan mutlak URL ve marka sabitleri.
 // Root layout'taki metadataBase ile aynı ortam değişkenini kullanır.
@@ -139,8 +139,41 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
-// Ana sayfadaki SSS bölümü için FAQPage şeması: soru/cevapları LLM ve arama
-// motorlarının doğrudan yanıt olarak kullanabileceği biçimde tanımlar.
+// Oteller listeleme sayfası için ItemList şeması: sayfada gösterilen otelleri
+// sıralı bir liste olarak tanımlar; arama motorları ve LLM'lerin bunun bir otel
+// listesi olduğunu ve her otelin bağlantısını anlamasını sağlar.
+export function itemListJsonLd(hotels: Hotel[], lang: Locale) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    numberOfItems: hotels.length,
+    itemListElement: hotels.map((hotel, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${SITE_URL}/${lang}/hotels/${hotel.id}`,
+      name: hotel.name,
+    })),
+  };
+}
+
+// Bölgeler sayfası için ItemList şeması: her tatil bölgesini, o bölgenin
+// otellerini listeleyen arama URL'ine bağlanan sıralı bir öğe olarak tanımlar.
+export function destinationListJsonLd(destinations: Destination[], lang: Locale) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    numberOfItems: destinations.length,
+    itemListElement: destinations.map((destination, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: destination.name,
+      url: `${SITE_URL}/${lang}/hotels?q=${encodeURIComponent(destination.name)}`,
+    })),
+  };
+}
+
+// SSS bölümü için FAQPage şeması: soru/cevapları LLM ve arama motorlarının
+// doğrudan yanıt olarak kullanabileceği biçimde tanımlar.
 export function faqJsonLd(items: { question: string; answer: string }[]) {
   return {
     "@context": "https://schema.org",

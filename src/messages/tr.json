@@ -60,7 +60,39 @@
     "resultsSuffix": "otel bulundu",
     "clearSearch": "Aramayı temizle",
     "emptyTitle": "Sonuç bulunamadı",
-    "emptyText": "Aramanı kontrol et ya da farklı bir şehir veya otel adı dene."
+    "emptyText": "Aramanı kontrol et ya da farklı bir şehir veya otel adı dene.",
+    "aboutTitle": "Türkiye'nin en iyi otelleri tek bir adreste",
+    "aboutBody": [
+      "OtelKirala ile Antalya, Bodrum, Fethiye, Marmaris, İstanbul ve Kapadokya başta olmak üzere Türkiye'nin dört bir yanındaki otelleri tek bir sayfada karşılaştırabilirsin. Şehir ya da otel adına göre arama yaparak sana en uygun seçenekleri saniyeler içinde listeleyebilirsin.",
+      "Deniz kenarındaki tatil köylerinden şehir merkezindeki butik otellere, aileler için geniş odalardan çiftlere özel konsept tesislere kadar her bütçeye ve her tatil planına uygun binlerce seçenek burada. Her otel için gerçek misafir puanlarını, gecelik başlangıç fiyatını ve öne çıkan özellikleri görebilirsin.",
+      "Helal konsept arayanlar için ayrı kadın/erkek havuz ve plaj, alkolsüz tesis, helal mutfak ve mescit gibi olanaklara sahip otelleri kolayca bulabilirsin. Beğendiğin otelin sayfasına girip birkaç dakika içinde rezervasyon talebi oluşturabilirsin."
+    ],
+    "faq": {
+      "title": "Oteller hakkında sıkça sorulan sorular",
+      "subtitle": "Otel arama, fiyatlar ve rezervasyon hakkında bilmen gerekenler.",
+      "items": [
+        {
+          "question": "Otelleri nasıl arayabilir ve filtreleyebilirim?",
+          "answer": "Arama kutusuna şehir ya da otel adı yazarak sonuçları anında daraltabilirsin. Ana sayfadaki arama formundan giriş-çıkış tarihi ve kişi sayısı da seçebilir, sana uygun otelleri bu sayfada listeleyebilirsin."
+        },
+        {
+          "question": "Gösterilen fiyatlar neyi kapsıyor?",
+          "answer": "Otel kartlarında görünen fiyatlar, ilgili otelin gecelik başlangıç fiyatını (₺ cinsinden) gösterir. Nihai tutar seçtiğin oda tipine, tarih aralığına ve kişi sayısına göre değişebilir; detayları otel sayfasında görebilirsin."
+        },
+        {
+          "question": "Listelenen tüm oteller helal konsept mi?",
+          "answer": "Hayır, listede her tarz otel bulunur. Helal konsept tesisleri arıyorsan otel sayfalarındaki 'Helal Konsept Özellikleri' bölümüne bakabilir; ayrı havuz/plaj, alkolsüz tesis, helal mutfak ve mescit gibi olanakları kontrol edebilirsin."
+        },
+        {
+          "question": "Arama sonuçları neye göre sıralanıyor?",
+          "answer": "Oteller en son eklenenler önce gelecek şekilde listelenir. Arama yaptığında yalnızca adı veya şehri aramanla eşleşen oteller gösterilir."
+        },
+        {
+          "question": "Rezervasyonu bu sayfadan mı yapıyorum?",
+          "answer": "Bu sayfa otelleri karşılaştırman içindir. Beğendiğin otele tıklayıp detay sayfasında oda seçtikten sonra rezervasyon talebini oluşturursun; ekibimiz en kısa sürede seninle iletişime geçer."
+        }
+      ]
+    }
   },
   "hotelCard": {
     "reviews": "değerlendirme",
@@ -117,7 +149,37 @@
   "destinations": {
     "title": "Popüler Bölgeler",
     "subtitle": "Türkiye'nin en çok tercih edilen tatil bölgelerini keşfet.",
-    "hotelsSuffix": "otel"
+    "hotelsSuffix": "otel",
+    "pageTitle": "Türkiye'nin Popüler Tatil Bölgeleri",
+    "pageIntro": "Antalya'nın turkuaz koylarından Kapadokya'nın peri bacalarına, Bodrum'un canlı sahillerinden İstanbul'un tarihi dokusuna kadar Türkiye'nin en çok tercih edilen tatil bölgelerini keşfet. Bir bölgeye tıkla, oradaki otelleri tek bir sayfada karşılaştır.",
+    "aboutTitle": "Hangi bölge sana göre?",
+    "aboutBody": [
+      "Deniz, kum ve güneş arıyorsan Antalya, Bodrum, Fethiye ve Marmaris canlı sahilleri ve mavi bayraklı plajlarıyla öne çıkar. Aileler için sakin koylar ve her şey dahil tesisler, çiftler içinse butik konsept oteller bu bölgelerde bolca bulunur.",
+      "Kültür ve doğa tatili planlıyorsan Kapadokya'nın eşsiz manzaraları ve balon turları, İstanbul'un tarihi yarımadası ile boğaz manzaralı otelleri unutulmaz bir deneyim sunar. Termal tatil için Afyon ve Pamukkale çevresindeki oteller tercih edilebilir.",
+      "Hangi bölgeyi seçersen seç, OtelKirala'da helal konsept tesisler dahil binlerce seçeneği fiyata ve gerçek misafir puanlarına göre karşılaştırabilir, tatilini güvenle planlayabilirsin."
+    ],
+    "faq": {
+      "title": "Bölgeler hakkında sıkça sorulan sorular",
+      "subtitle": "Tatil bölgeleri ve otel seçimi hakkında bilmen gerekenler.",
+      "items": [
+        {
+          "question": "Türkiye'de tatil için en popüler bölgeler hangileri?",
+          "answer": "Antalya, Bodrum, Fethiye, Marmaris, Kapadokya ve İstanbul en çok tercih edilen bölgelerdir. Deniz tatili için Ege ve Akdeniz kıyıları; kültür ve doğa için Kapadokya ile İstanbul öne çıkar."
+        },
+        {
+          "question": "Bir bölgeye tıklayınca ne oluyor?",
+          "answer": "Bir bölgeye tıkladığında, o bölgenin otellerini listeleyen otel arama sayfasına yönlendirilirsin. Oradan fiyat, puan ve özelliklere göre karşılaştırma yapabilirsin."
+        },
+        {
+          "question": "Helal konsept oteller hangi bölgelerde var?",
+          "answer": "Helal konsept oteller başta Antalya, Alanya ve Sapanca olmak üzere birçok bölgede bulunur. Otel sayfalarındaki 'Helal Konsept Özellikleri' bölümünden ayrı havuz/plaj, alkolsüz tesis ve mescit gibi olanakları kontrol edebilirsin."
+        },
+        {
+          "question": "Tatil için en uygun dönem ne zaman?",
+          "answer": "Deniz tatili için Haziran–Eylül arası idealdir. Kapadokya ve İstanbul gibi bölgeler ise ilkbahar ve sonbaharda daha uygun fiyatlı ve keyiflidir. Erken rezervasyon fırsatlarıyla daha uygun fiyatlar yakalayabilirsin."
+        }
+      ]
+    }
   },
   "whyUs": {
     "title": "Neden OtelKirala?",

@@ -21,17 +21,23 @@ function connect(): Promise<MongoClient> {
 function getClientPromise(): Promise<MongoClient> {
   // Development'ta hot-reload sırasında bağlantının tekrar tekrar açılmasını
   // önlemek için client promise'i globalThis üzerinde saklıyoruz.
-  if (process.env.NODE_ENV === "development") {
-    if (!global._mongoClientPromise) {
-      global._mongoClientPromise = connect();
-    }
-    return global._mongoClientPromise;
-  }
+  const isDev = process.env.NODE_ENV === "development";
+  const cached = isDev ? global._mongoClientPromise : clientPromise;
+  if (cached) return cached;
 
-  if (!clientPromise) {
-    clientPromise = connect();
-  }
-  return clientPromise;
+  // Bağlantı başarısız olursa reddedilen promise'i önbellekten temizliyoruz;
+  // aksi halde tek bir geçici hata (ağ dalgalanması, Atlas IP izin listesinin
+  // gecikmesi vb.) sunucu yeniden başlatılana kadar TÜM istekleri kalıcı olarak
+  // başarısız kılar. Böylece bir sonraki istek yeniden bağlanmayı dener.
+  const promise = connect().catch((error) => {
+    if (isDev) global._mongoClientPromise = undefined;
+    else clientPromise = undefined;
+    throw error;
+  });
+
+  if (isDev) global._mongoClientPromise = promise;
+  else clientPromise = promise;
+  return promise;
 }
 
 export async function getDb(): Promise<Db> {

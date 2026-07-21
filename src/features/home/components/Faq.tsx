@@ -1,10 +1,17 @@
-import type { Dictionary } from "@/messages/dictionaries";
+// SSS bölümünün beklediği yapısal içerik tipi. Belirli bir sözlük anahtarına
+// bağlı değildir; hem ana sayfa (faq) hem de oteller sayfası (allHotels.faq)
+// aynı şekle sahip olduğundan bu bileşen ikisinde de yeniden kullanılır.
+type FaqContent = {
+  title: string;
+  subtitle: string;
+  items: { question: string; answer: string }[];
+};
 
-// Ana sayfadaki Sıkça Sorulan Sorular bölümü. Native <details>/<summary> ile
-// akordeon davranışı sağlar; tüm soru ve cevap metni DOM'da her zaman mevcut
-// olduğundan arama motorları ve LLM'ler içeriği okuyabilir. Aynı içerik
-// page.tsx'te FAQPage yapılandırılmış verisi olarak da yayınlanır.
-export default function Faq({ dict }: { dict: Dictionary["faq"] }) {
+// Sıkça Sorulan Sorular bölümü. Native <details>/<summary> ile akordeon
+// davranışı sağlar; tüm soru ve cevap metni DOM'da her zaman mevcut olduğundan
+// arama motorları ve LLM'ler içeriği okuyabilir. Aynı içerik ilgili sayfada
+// FAQPage yapılandırılmış verisi olarak da yayınlanır.
+export default function Faq({ dict }: { dict: FaqContent }) {
   return (
     <section className="mx-auto max-w-3xl px-6 py-20">
       <div className="text-center">

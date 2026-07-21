@@ -60,7 +60,39 @@
     "resultsSuffix": "hotels found",
     "clearSearch": "Clear search",
     "emptyTitle": "No results found",
-    "emptyText": "Check your search or try a different city or hotel name."
+    "emptyText": "Check your search or try a different city or hotel name.",
+    "aboutTitle": "The best hotels in Turkey, all in one place",
+    "aboutBody": [
+      "With OtelKirala you can compare hotels across Turkey — including Antalya, Bodrum, Fethiye, Marmaris, Istanbul and Cappadocia — on a single page. Search by city or hotel name and list the options that suit you best in seconds.",
+      "From seaside holiday resorts to boutique city-centre hotels, from spacious family rooms to couples-only concept properties, you'll find thousands of options here for every budget and every kind of trip. For each hotel you can see real guest ratings, the starting nightly price and standout features.",
+      "If you're looking for a halal-friendly stay, you can easily find hotels with amenities such as separate pools and beaches for women and men, alcohol-free premises, halal cuisine and prayer rooms. Open your chosen hotel's page and create a reservation request in just a few minutes."
+    ],
+    "faq": {
+      "title": "Frequently asked questions about hotels",
+      "subtitle": "What you need to know about searching, prices and booking.",
+      "items": [
+        {
+          "question": "How can I search and filter hotels?",
+          "answer": "Type a city or hotel name into the search box to instantly narrow the results. From the search form on the home page you can also choose check-in and check-out dates and the number of guests, and the matching hotels will be listed on this page."
+        },
+        {
+          "question": "What do the displayed prices include?",
+          "answer": "The prices shown on the hotel cards are the starting nightly price for that hotel (in Turkish lira, ₺). The final amount may vary depending on the room type, date range and number of guests you choose; you can see the details on the hotel's page."
+        },
+        {
+          "question": "Are all the listed hotels halal-friendly?",
+          "answer": "No, the list includes every kind of hotel. If you're looking for halal-friendly properties, check the 'Halal Concept Features' section on the hotel pages for amenities such as separate pools/beaches, alcohol-free premises, halal cuisine and prayer rooms."
+        },
+        {
+          "question": "How are the search results sorted?",
+          "answer": "Hotels are listed with the most recently added ones first. When you search, only hotels whose name or city matches your query are shown."
+        },
+        {
+          "question": "Do I book directly from this page?",
+          "answer": "This page is for comparing hotels. Click the hotel you like, choose a room on its detail page and then create your reservation request; our team will contact you shortly."
+        }
+      ]
+    }
   },
   "hotelCard": {
     "reviews": "reviews",
@@ -117,7 +149,37 @@
   "destinations": {
     "title": "Popular Destinations",
     "subtitle": "Discover Turkey's most popular vacation destinations.",
-    "hotelsSuffix": "hotels"
+    "hotelsSuffix": "hotels",
+    "pageTitle": "Turkey's Most Popular Vacation Destinations",
+    "pageIntro": "From the turquoise coves of Antalya to the fairy chimneys of Cappadocia, from the lively shores of Bodrum to the historic fabric of Istanbul, explore Turkey's most popular vacation destinations. Click a destination to compare its hotels on a single page.",
+    "aboutTitle": "Which destination is right for you?",
+    "aboutBody": [
+      "If you're after sea, sand and sun, Antalya, Bodrum, Fethiye and Marmaris stand out with their lively shores and Blue Flag beaches. You'll find plenty of calm bays and all-inclusive resorts for families, and boutique concept hotels for couples, in these regions.",
+      "If you're planning a culture or nature trip, the unique landscapes and balloon tours of Cappadocia and the historic peninsula and Bosphorus-view hotels of Istanbul offer an unforgettable experience. For a thermal getaway, hotels around Afyon and Pamukkale are a great choice.",
+      "Whichever destination you choose, on OtelKirala you can compare thousands of options — including halal-friendly properties — by price and real guest ratings, and plan your vacation with confidence."
+    ],
+    "faq": {
+      "title": "Frequently asked questions about destinations",
+      "subtitle": "What you need to know about vacation destinations and choosing a hotel.",
+      "items": [
+        {
+          "question": "What are the most popular vacation destinations in Turkey?",
+          "answer": "Antalya, Bodrum, Fethiye, Marmaris, Cappadocia and Istanbul are the most popular destinations. The Aegean and Mediterranean coasts are ideal for a beach holiday, while Cappadocia and Istanbul stand out for culture and nature."
+        },
+        {
+          "question": "What happens when I click a destination?",
+          "answer": "When you click a destination, you're taken to the hotel search page listing the hotels in that region, where you can compare them by price, rating and features."
+        },
+        {
+          "question": "Which destinations have halal-friendly hotels?",
+          "answer": "Halal-friendly hotels can be found in many regions, especially Antalya, Alanya and Sapanca. Check the 'Halal Concept Features' section on the hotel pages for amenities such as separate pools/beaches, alcohol-free premises and prayer rooms."
+        },
+        {
+          "question": "When is the best time to travel?",
+          "answer": "June to September is ideal for a beach holiday. Destinations like Cappadocia and Istanbul are more affordable and enjoyable in spring and autumn. You can catch better prices with early-booking deals."
+        }
+      ]
+    }
   },
   "whyUs": {
     "title": "Why OtelKirala?",
